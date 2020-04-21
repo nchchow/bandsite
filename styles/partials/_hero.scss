@@ -1,0 +1,14 @@
+// HERO
+.hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 183px;
+	// placeholder background
+	background: url("../assets/images/Photo-gallery-8.jpg");
+	background-size: cover;
+
+	&__title {
+		color: #fff;
+	}
+}

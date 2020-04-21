@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../assets/fonts/Alternative files/Linotype - Avenir Next LT Pro.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir Next Demi Bold";
+  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../assets/fonts/Alternative files/Avenir Next LT Pro Demi.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../assets/fonts/Alternative files/Avenir Next LT Pro Bold.ttf") format("truetype");
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+html,
+body {
+  font-family: "Avenir Next Regular";
+}
+
+.container {
+  margin: 0 16px;
+}
+
+.main-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  background: #323232;
+  color: #fff;
+}
+
+.main-header__logo {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.main-header__nav {
+  width: 100%;
+}
+
+.main-header__nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main-header__nav__item {
+  width: 160px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 183px;
+  background: url("../assets/images/Photo-gallery-8.jpg");
+  background-size: cover;
+}
+
+.hero__title {
+  color: #fff;
+}
+/*# sourceMappingURL=main.css.map */
