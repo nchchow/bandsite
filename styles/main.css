@@ -70,6 +70,7 @@ body {
 }
 
 .main-header__logo {
+  margin: 0;
   font-size: 1.5rem;
   line-height: 2rem;
 }
@@ -79,6 +80,7 @@ body {
 }
 
 .main-header__nav__list {
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
