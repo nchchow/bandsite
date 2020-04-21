@@ -1,0 +1,44 @@
+// ABOUT
+.about {
+	margin-bottom: 40px;
+	font-size: 0.9rem;
+
+	&__title {
+		font-family: $font-bold;
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		margin: 32px 0 24px;
+	}
+
+	&__img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		object-position: 0 -1.5rem;
+	}
+
+	&__quote {
+		margin: 0;
+		font-family: $font-demi;
+		font-size: inherit;
+		line-height: 1.35rem;
+	}
+
+	&__quote-source {
+		margin: 32px 0 0 0;
+		font-size: inherit;
+	}
+
+	&__summary {
+		&__title {
+			margin: 40px 0 0 0;
+			font-family: $font-demi;
+			font-size: inherit;
+		}
+
+		&__content {
+			margin: 24px 0 0 0;
+			font-size: inherit;
+		}
+	}
+}
