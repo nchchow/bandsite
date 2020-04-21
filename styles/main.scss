@@ -5,5 +5,19 @@
 @import "./partials/util";
 @import "./partials/header";
 @import "./partials/hero";
+@import "./partials/about";
+@import "./partials/gallery";
 
-// ABOUT
+// FOOTER
+.main-footer {
+	background: $navigation-background-fill;
+	color: #fff;
+	padding-left: 10px;
+	text-transform: capitalize;
+
+	&__title {
+		margin: 0;
+		padding-top: 50px;
+		font-family: $font-bold;
+	}
+}

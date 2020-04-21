@@ -5,12 +5,12 @@
 	justify-content: center;
 	height: 183px;
 	// placeholder background
-	background: url("../assets/images/Photo-gallery-8.jpg");
+	background: url("../assets/images/Photo-hero.jpg");
 	background-size: cover;
 
 	&__title {
 		margin: 0;
-		font-family: "Avenir Next Bold";
+		font-family: $font-bold;
 		font-size: 1.5rem;
 		color: #fff;
 	}
