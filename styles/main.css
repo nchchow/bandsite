@@ -16,10 +16,18 @@
   src: url("../assets/fonts/Alternative files/Avenir Next LT Pro Bold.ttf") format("truetype");
 }
 
+html,
+body {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 *,
 *:before,
 *:after {
-  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 ul {
@@ -79,7 +87,7 @@ body {
 }
 
 .main-header__nav__item {
-  width: 160px;
+  width: 50%;
   text-align: center;
   text-transform: capitalize;
 }
