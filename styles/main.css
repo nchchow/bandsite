@@ -1,4 +1,10 @@
 @font-face {
+  font-family: "Avenir Next Ultra Light";
+  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Ultlt.otf") format("opentype");
+  src: url("../assets/fonts/Alternative files/Linotype - Avenir Next LT Pro Ultra Light.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Avenir Next Regular";
   src: url("../assets/fonts/Linotype - AvenirNextLTPro-Regular.otf") format("opentype");
   src: url("../assets/fonts/Alternative files/Linotype - Avenir Next LT Pro.ttf") format("truetype");
@@ -180,15 +186,66 @@ body {
 }
 
 .main-footer {
+  padding-left: 10px;
+  padding-bottom: 20px;
   background: #323232;
   color: #fff;
-  padding-left: 10px;
   text-transform: capitalize;
 }
 
 .main-footer__title {
   margin: 0;
-  padding-top: 50px;
+  padding-top: 40px;
   font-family: "Avenir Next Bold";
+}
+
+.main-footer__social {
+  margin: 28px 6px;
+  width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-footer__contacts {
+  font-size: 0.8rem;
+}
+
+.main-footer__contact {
+  line-height: 1.1rem;
+}
+
+.main-footer__contact__name {
+  margin: 0;
+  font-family: "Avenir Next Demi Bold";
+  font-size: inherit;
+}
+
+.main-footer__contact__address {
+  margin: 0;
+  font-family: "Avenir Next Ultra Light";
+  font-size: inherit;
+}
+
+.main-footer__contact__address:first-of-type {
+  margin-top: 16px;
+}
+
+.main-footer__contact__email {
+  font-family: "Avenir Next Ultra Light";
+  text-transform: lowercase;
+}
+
+.main-footer__contact__email--cap {
+  text-transform: none;
+}
+
+.main-footer__legal {
+  margin: 28px 0;
+  font-family: "Avenir Next Ultra Light";
+  font-size: 0.8rem;
 }
 /*# sourceMappingURL=main.css.map */

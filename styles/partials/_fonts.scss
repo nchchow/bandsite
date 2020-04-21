@@ -1,4 +1,12 @@
 @font-face {
+	font-family: "Avenir Next Ultra Light";
+	src: url("../assets/fonts/Linotype - AvenirNextLTPro-Ultlt.otf")
+		format("opentype");
+	src: url("../assets/fonts/Alternative\ files/Linotype - Avenir Next LT Pro Ultra Light.ttf")
+		format("truetype");
+}
+
+@font-face {
 	font-family: "Avenir Next Regular";
 	src: url("../assets/fonts/Linotype - AvenirNextLTPro-Regular.otf")
 		format("opentype");

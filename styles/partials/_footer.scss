@@ -1,0 +1,65 @@
+// FOOTER
+.main-footer {
+	padding-left: 10px;
+	padding-bottom: 20px;
+	background: $navigation-background-fill;
+	color: #fff;
+	text-transform: capitalize;
+
+	&__title {
+		margin: 0;
+		padding-top: 40px;
+		font-family: $font-bold;
+	}
+
+	&__social {
+		margin: 28px 6px;
+		width: 35%;
+		display: flex;
+		justify-content: space-between;
+
+		&__link {
+		}
+
+		&__icon {
+		}
+	}
+
+	&__contacts {
+		font-size: 0.8rem;
+	}
+
+	&__contact {
+		line-height: 1.1rem;
+		&__name {
+			margin: 0;
+			font-family: $font-demi;
+			font-size: inherit;
+		}
+
+		&__address {
+			margin: 0;
+			font-family: $font-light;
+			font-size: inherit;
+
+			&:first-of-type {
+				margin-top: 16px;
+			}
+		}
+
+		&__email {
+			font-family: $font-light;
+			text-transform: lowercase;
+
+			&--cap {
+				text-transform: none;
+			}
+		}
+	}
+
+	&__legal {
+		margin: 28px 0;
+		font-family: $font-light;
+		font-size: 0.8rem;
+	}
+}
