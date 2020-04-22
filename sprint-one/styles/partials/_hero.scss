@@ -1,12 +1,21 @@
 // HERO
 .hero {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	position: relative;
 	height: 183px;
-	// placeholder background
 	background: url("../assets/images/Photo-hero.jpg");
 	background-size: cover;
+
+	.overlay {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba($navigation-background-fill, 0.5);
+	}
 
 	&__title {
 		margin: 0;

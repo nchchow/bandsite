@@ -26,7 +26,8 @@
 
 	&__quote-source {
 		margin: 32px 0 0 0;
-		font-size: inherit;
+		font-family: $font-demi;
+		font-size: 0.8rem;
 	}
 
 	&__summary {
@@ -38,7 +39,9 @@
 
 		&__content {
 			margin: 24px 0 0 0;
-			font-size: inherit;
+			font-family: $font-light;
+			font-size: 0.8rem;
+			line-height: 1.3rem;
 		}
 	}
 }
