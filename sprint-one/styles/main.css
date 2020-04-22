@@ -63,11 +63,33 @@ body {
   margin: 0 16px;
 }
 
-.aspect-ratio-container--two-to-one {
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(50, 50, 50, 0.5);
+}
+
+.center-text-vertical {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aspect-ratio-container {
   position: relative;
 }
 
-.aspect-ratio-container--two-to-one::after {
+.aspect-ratio-container::after {
   content: "";
   display: block;
   padding-top: 50%;
@@ -159,25 +181,6 @@ body {
   background-size: cover;
 }
 
-.hero .overlay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(50, 50, 50, 0.5);
-}
-
 .hero__title {
   margin: 0;
   font-family: "Avenir Next Bold";
@@ -198,18 +201,13 @@ body {
 }
 
 .about__img {
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.aspect-ratio-container--two-to-one .about__img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .about__quote {
