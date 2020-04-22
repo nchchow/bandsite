@@ -1,6 +1,5 @@
 // FOOTER
 .main-footer {
-	padding-left: 10px;
 	padding-bottom: 20px;
 	background: $navigation-background-fill;
 	color: #fff;
@@ -10,6 +9,9 @@
 		margin: 0;
 		padding-top: 40px;
 		font-family: $font-bold;
+		@include tablet() {
+			@include text-size-height(2.25rem, 2.75rem);
+		}
 	}
 
 	&__social {
@@ -17,11 +19,24 @@
 		width: 35%;
 		display: flex;
 		justify-content: space-between;
+		@include tablet() {
+			justify-content: flex-start;
+		}
 
 		&__link {
+			@include tablet() {
+				margin-right: 28px;
+			}
 		}
 
 		&__icon {
+		}
+	}
+
+	&__logo {
+		display: none;
+		@include tablet() {
+			display: block;
 		}
 	}
 

@@ -49,3 +49,18 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+
+// util container for footer content
+.footer-container {
+	margin-bottom: 28px;
+	@extend .flex-container--lg;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+// remove line break for larger screen sizes
+.line-break {
+	@include tablet() {
+		display: none;
+	}
+}
