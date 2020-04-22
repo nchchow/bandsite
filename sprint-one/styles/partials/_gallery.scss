@@ -13,5 +13,9 @@
 	&__img {
 		width: 100%;
 		margin-bottom: 16px;
+		@include tablet() {
+			height: 126px;
+			width: 224px;
+		}
 	}
 }

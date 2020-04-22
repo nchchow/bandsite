@@ -41,3 +41,11 @@
 		display: flex;
 	}
 }
+
+// util container for gallery images
+.img-container {
+	@extend .flex-container--lg;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
