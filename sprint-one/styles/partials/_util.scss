@@ -34,3 +34,10 @@
 		padding-top: 50%; // 2:1 ratio
 	}
 }
+
+// flexed when screen is larger than mobile version
+.flex-container--lg {
+	@include tablet() {
+		display: flex;
+	}
+}

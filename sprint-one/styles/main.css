@@ -101,6 +101,14 @@ body {
   padding-top: 50%;
 }
 
+@media screen and (min-width: 321px) {
+  .flex-container--lg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .main-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -286,10 +294,23 @@ body {
   line-height: 1.35rem;
 }
 
+@media screen and (min-width: 321px) {
+  .about__quote {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
 .about__quote-source {
   margin: 32px 0 0 0;
   font-family: "Avenir Next Demi Bold";
   font-size: 0.8rem;
+}
+
+@media screen and (min-width: 321px) {
+  .about__quote-source {
+    font-size: 1rem;
+  }
 }
 
 .about__summary__title {
@@ -298,11 +319,27 @@ body {
   font-size: inherit;
 }
 
+@media screen and (min-width: 321px) {
+  .about__summary__title {
+    font-size: 1.5rem;
+  }
+}
+
 .about__summary__content {
   margin: 24px 0 0 0;
   font-family: "Avenir Next Ultra Light";
   font-size: 0.8rem;
   line-height: 1.3rem;
+}
+
+@media screen and (min-width: 321px) {
+  .about__summary__content {
+    font-family: "Avenir Next Regular";
+    font-size: 0.9rem;
+  }
+  .about__summary__content:first-child {
+    padding-right: 24px;
+  }
 }
 
 .gallery {
