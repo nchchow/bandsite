@@ -2,3 +2,13 @@
 .container {
 	margin: 0 16px;
 }
+
+.aspect-ratio-container--two-to-one {
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		padding-top: 50%;
+	}
+}
