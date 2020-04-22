@@ -34,6 +34,8 @@
 			&--active {
 				color: #fff;
 				font-family: $font-medium;
+
+				// white underline
 				&:before {
 					content: "";
 					position: absolute;
