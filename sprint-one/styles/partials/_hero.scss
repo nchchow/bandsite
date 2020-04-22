@@ -11,12 +11,10 @@
 	&__title {
 		margin: 0;
 		font-family: $font-bold;
-		font-size: 1.5rem;
-		line-height: 2rem;
+		@include text-size-height(1.5rem, 2rem);
 		color: #fff;
 		@include tablet() {
-			font-size: 3.75rem;
-			line-height: 4.25rem;
+			@include text-size-height(3.75rem, 4.25rem);
 		}
 	}
 }
