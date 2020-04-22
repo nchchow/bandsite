@@ -4,11 +4,19 @@
 	height: 183px;
 	background: url("../assets/images/Photo-hero.jpg");
 	background-size: cover;
+	@include tablet() {
+		height: 400px;
+	}
 
 	&__title {
 		margin: 0;
 		font-family: $font-bold;
 		font-size: 1.5rem;
+		line-height: 2rem;
 		color: #fff;
+		@include tablet() {
+			font-size: 3.75rem;
+			line-height: 4.25rem;
+		}
 	}
 }

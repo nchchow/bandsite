@@ -2,6 +2,9 @@
 // adds left and right margin to child elements
 .container {
 	margin: 0 16px;
+	@include tablet() {
+		margin: 0 24px;
+	}
 }
 
 // adds opaque overlay to child elements
