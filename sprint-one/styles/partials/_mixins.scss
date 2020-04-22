@@ -4,3 +4,8 @@
 		@content;
 	}
 }
+
+@mixin text-size-height($size, $height) {
+	font-size: $size;
+	line-height: $height;
+}

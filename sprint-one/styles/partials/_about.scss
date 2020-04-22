@@ -5,9 +5,12 @@
 
 	&__title {
 		font-family: $font-bold;
-		font-size: 1.5rem;
+		@include text-size-height(1.5rem, 2rem);
 		text-transform: capitalize;
 		margin: 32px 0 24px;
+		@include tablet() {
+			@include text-size-height(2.25rem, 2.75rem);
+		}
 	}
 
 	&__img {
@@ -22,8 +25,7 @@
 	&__quote {
 		margin: 24px 0 0 0;
 		font-family: $font-demi;
-		font-size: inherit;
-		line-height: 1.35rem;
+		@include text-size-height(inherit, 1.35rem);
 	}
 
 	&__quote-source {
@@ -42,8 +44,7 @@
 		&__content {
 			margin: 24px 0 0 0;
 			font-family: $font-light;
-			font-size: 0.8rem;
-			line-height: 1.3rem;
+			@include text-size-height(0.8rem, 1.3rem);
 		}
 	}
 }

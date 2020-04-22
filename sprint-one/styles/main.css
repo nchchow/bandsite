@@ -257,8 +257,16 @@ body {
 .about__title {
   font-family: "Avenir Next Bold";
   font-size: 1.5rem;
+  line-height: 2rem;
   text-transform: capitalize;
   margin: 32px 0 24px;
+}
+
+@media screen and (min-width: 321px) {
+  .about__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
 }
 
 .about__img {
