@@ -63,7 +63,7 @@ body {
   margin: 0 16px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .container {
     margin: 0 24px;
   }
@@ -101,7 +101,7 @@ body {
   padding-top: 50%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .flex-container--lg, .img-container, .footer-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -131,7 +131,7 @@ body {
           align-items: baseline;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .line-break {
     display: none;
   }
@@ -156,7 +156,7 @@ body {
   color: #fff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .main-header {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -179,7 +179,7 @@ body {
   height: 50%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .main-header__nav {
     width: 284px;
     height: 100%;
@@ -199,7 +199,7 @@ body {
   height: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .main-header__nav__list {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
@@ -212,7 +212,7 @@ body {
   padding-bottom: 12px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .main-header__nav__link {
     padding-bottom: 0;
   }
@@ -236,7 +236,7 @@ body {
   text-transform: capitalize;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .main-header__nav__item {
     width: 80px;
   }
@@ -264,7 +264,7 @@ body {
   background-size: cover;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .hero {
     height: 400px;
   }
@@ -278,7 +278,7 @@ body {
   color: #fff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .hero__title {
     font-size: 3.75rem;
     line-height: 4.25rem;
@@ -298,7 +298,7 @@ body {
   margin: 32px 0 24px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .about__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -322,7 +322,7 @@ body {
   line-height: 1.35rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .about__quote {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -335,7 +335,7 @@ body {
   font-size: 0.8rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .about__quote-source {
     font-size: 1rem;
   }
@@ -347,7 +347,7 @@ body {
   font-size: inherit;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .about__summary__title {
     font-size: 1.5rem;
   }
@@ -360,9 +360,8 @@ body {
   line-height: 1.3rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .about__summary__content {
-    font-family: "Avenir Next Regular";
     font-size: 0.9rem;
   }
   .about__summary__content:first-child {
@@ -382,7 +381,7 @@ body {
   text-transform: capitalize;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .gallery__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -394,7 +393,7 @@ body {
   margin-bottom: 16px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .gallery__img {
     height: 126px;
     width: 224px;
@@ -414,7 +413,7 @@ body {
   font-family: "Avenir Next Bold";
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .main-footer__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -432,7 +431,7 @@ body {
           justify-content: space-between;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .main-footer__social {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -440,7 +439,7 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .main-footer__social__link {
     margin-right: 28px;
   }
@@ -450,7 +449,7 @@ body {
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .main-footer__logo {
     display: block;
   }

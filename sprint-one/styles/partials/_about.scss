@@ -56,7 +56,6 @@
 			@include text-size-height(0.8rem, 1.3rem);
 
 			@include tablet() {
-				font-family: $font-regular;
 				font-size: 0.9rem;
 				&:first-child {
 					padding-right: 24px;
