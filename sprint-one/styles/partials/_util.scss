@@ -2,8 +2,14 @@
 // adds left and right margin to child elements
 .container {
 	margin: 0 16px;
-	@include tablet() {
-		margin: 0 24px;
+	&--left {
+		@include tablet() {
+			margin-left: 24px;
+		}
+
+		@include desktop() {
+			margin-left: 180px;
+		}
 	}
 }
 

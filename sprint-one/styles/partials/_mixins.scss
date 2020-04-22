@@ -5,6 +5,12 @@
 	}
 }
 
+@mixin desktop {
+	@media screen and (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
 @mixin text-size-height($size, $height) {
 	font-size: $size;
 	line-height: $height;

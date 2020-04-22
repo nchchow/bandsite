@@ -10,7 +10,6 @@
 	@include tablet() {
 		flex-direction: row;
 		justify-content: flex-start;
-		padding-left: 24px;
 	}
 
 	&__logo {
