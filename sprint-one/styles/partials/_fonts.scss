@@ -15,6 +15,14 @@
 }
 
 @font-face {
+	font-family: "Avenir Next Medium";
+	src: url("../assets/fonts/Linotype - AvenirNextLTPro-Medium.otf")
+		format("opentype");
+	src: url("../assets/fonts/Alternative\ files/Linotype - Avenir Next LT Pro Medium.ttf")
+		format("truetype");
+}
+
+@font-face {
 	font-family: "Avenir Next Demi Bold";
 	src: url("../assets/fonts/Linotype\ -\ AvenirNextLTPro-Demi.otf")
 		format("opentype");

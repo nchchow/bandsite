@@ -10,8 +10,9 @@
 
 	&__logo {
 		margin: 0;
-		font-size: 1.5rem;
-		line-height: 2rem;
+		// font-family: $font-light;
+		// font-size: 1.5rem;
+		// line-height: 2rem;
 	}
 
 	&__nav {
@@ -24,9 +25,25 @@
 		}
 
 		&__item {
+			position: relative;
 			width: 50%;
+			color: $text-label-style;
+			font-size: 0.9rem;
 			text-align: center;
 			text-transform: capitalize;
+			&--active {
+				color: #fff;
+				font-family: $font-medium;
+				&:before {
+					content: "";
+					position: absolute;
+					height: 4px;
+					width: 100%;
+					left: 0;
+					bottom: -13px;
+					background: #fff;
+				}
+			}
 		}
 	}
 }

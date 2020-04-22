@@ -11,6 +11,12 @@
 }
 
 @font-face {
+  font-family: "Avenir Next Medium";
+  src: url("../assets/fonts/Linotype - AvenirNextLTPro-Medium.otf") format("opentype");
+  src: url("../assets/fonts/Alternative files/Linotype - Avenir Next LT Pro Medium.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Avenir Next Demi Bold";
   src: url("../assets/fonts/Linotype - AvenirNextLTPro-Demi.otf") format("opentype");
   src: url("../assets/fonts/Alternative files/Linotype - Avenir Next LT Pro Demi.ttf") format("truetype");
@@ -78,8 +84,6 @@ body {
 
 .main-header__logo {
   margin: 0;
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .main-header__nav {
@@ -96,9 +100,27 @@ body {
 }
 
 .main-header__nav__item {
+  position: relative;
   width: 50%;
+  color: #afafaf;
+  font-size: 0.9rem;
   text-align: center;
   text-transform: capitalize;
+}
+
+.main-header__nav__item--active {
+  color: #fff;
+  font-family: "Avenir Next Medium";
+}
+
+.main-header__nav__item--active:before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: -13px;
+  background: #fff;
 }
 
 .hero {
