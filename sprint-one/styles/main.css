@@ -64,12 +64,18 @@ body {
 }
 
 @media screen and (min-width: 720px) {
+  .container {
+    margin: 0 24px;
+  }
   .container--left {
     margin-left: 24px;
   }
 }
 
 @media screen and (min-width: 1080px) {
+  .container {
+    margin: 0 180px;
+  }
   .container--left {
     margin-left: 180px;
   }
@@ -95,6 +101,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.max-width-container {
+  margin: 0 auto;
+  max-width: 896px;
 }
 
 .aspect-ratio-container {
@@ -310,6 +321,12 @@ body {
   }
 }
 
+@media screen and (min-width: 1080px) {
+  .about__title {
+    margin: 48px 0;
+  }
+}
+
 .about__img {
   position: absolute;
   top: 0;
@@ -334,6 +351,12 @@ body {
   }
 }
 
+@media screen and (min-width: 1080px) {
+  .about__quote {
+    margin: 48px 0 0 0;
+  }
+}
+
 .about__quote-source {
   margin: 32px 0 0 0;
   font-family: "Avenir Next Demi Bold";
@@ -346,6 +369,12 @@ body {
   }
 }
 
+@media screen and (min-width: 1080px) {
+  .about__quote-source {
+    margin: 40px 0 0 0;
+  }
+}
+
 .about__summary__title {
   margin: 40px 0 0 0;
   font-family: "Avenir Next Demi Bold";
@@ -355,6 +384,12 @@ body {
 @media screen and (min-width: 720px) {
   .about__summary__title {
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .about__summary__title {
+    margin: 56px 0 0 0;
   }
 }
 
@@ -371,6 +406,15 @@ body {
   }
   .about__summary__content:first-child {
     padding-right: 24px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .about__summary__content {
+    margin: 32px 0 0 0;
+  }
+  .about__summary__content:first-child {
+    padding-right: 40px;
   }
 }
 
