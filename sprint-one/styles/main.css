@@ -540,7 +540,7 @@ body {
 }
 
 .main-footer__social {
-  margin: 28px 6px;
+  margin: 28px 6px 0;
   width: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -596,6 +596,7 @@ body {
 }
 
 .main-footer__contact {
+  margin-top: 24px;
   line-height: 1.1rem;
 }
 

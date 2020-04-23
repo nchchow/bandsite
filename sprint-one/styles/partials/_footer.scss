@@ -19,7 +19,7 @@
 	}
 
 	&__social {
-		margin: 28px 6px;
+		margin: 28px 6px 0;
 		width: 35%;
 		display: flex;
 		justify-content: space-between;
@@ -55,6 +55,7 @@
 	}
 
 	&__contact {
+		margin-top: 24px;
 		line-height: 1.1rem;
 		&__name {
 			margin: 0;
