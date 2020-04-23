@@ -67,6 +67,7 @@
 				transform: translateX(-50%);
 				bottom: 0;
 				background: #fff;
+				transition: ease 0.1s;
 			}
 
 			&--active,
@@ -75,7 +76,6 @@
 				font-family: $font-medium;
 				&::before {
 					width: 100%;
-					animation: expand-width linear 0.15s;
 				}
 			}
 		}
