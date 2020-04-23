@@ -297,6 +297,12 @@ body {
   }
 }
 
+@media screen and (min-width: 1080px) {
+  .hero {
+    height: 670px;
+  }
+}
+
 .hero__title {
   margin: 0;
   font-family: "Avenir Next Bold";

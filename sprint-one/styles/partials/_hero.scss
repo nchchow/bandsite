@@ -7,6 +7,9 @@
 	@include tablet() {
 		height: 400px;
 	}
+	@include desktop() {
+		height: 670px;
+	}
 
 	&__title {
 		margin: 0;
