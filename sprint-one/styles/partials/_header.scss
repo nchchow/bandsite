@@ -57,20 +57,25 @@
 			@include tablet() {
 				width: 80px;
 			}
+			// white underline
+			&::before {
+				content: "";
+				position: absolute;
+				height: 4px;
+				width: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 0;
+				background: #fff;
+			}
 
-			&--active {
+			&--active,
+			&:hover {
 				color: #fff;
 				font-family: $font-medium;
-
-				// white underline
 				&::before {
-					content: "";
-					position: absolute;
-					height: 4px;
 					width: 100%;
-					left: 0;
-					bottom: 0;
-					background: #fff;
+					animation: expand-width linear 0.15s;
 				}
 			}
 		}

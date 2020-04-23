@@ -1,7 +1,7 @@
 // GALLERY
 .gallery {
-	background: $text-field-background-fill;
 	padding: 32px 0;
+	background: $text-field-background-fill;
 	@include desktop() {
 		padding: 48px 0 40px;
 	}
@@ -19,14 +19,28 @@
 		}
 	}
 
+	.hover-border {
+		margin-bottom: 16px;
+		overflow: hidden;
+		line-height: 0; // prevents unwanted padding on bottom of image
+		&:hover {
+			animation: shadow linear 0.15s forwards;
+		}
+	}
+
 	&__img {
 		width: 100%;
-		margin-bottom: 16px;
+		height: 100%;
+		filter: grayscale(70%);
 		@include tablet() {
 			margin: 0;
 		}
 		@include desktop() {
 			margin: 0;
+		}
+		&:hover {
+			animation: scale-up ease-in-out 0.4s forwards,
+				saturate ease-in-out 0.4s forwards;
 		}
 	}
 }

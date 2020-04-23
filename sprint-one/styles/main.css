@@ -28,6 +28,90 @@
   src: url("../assets/fonts/Alternative files/Linotype - Avenir Next LT Pro Bold.ttf") format("truetype");
 }
 
+@-webkit-keyframes expand-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes expand-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes scale-up {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes scale-up {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@-webkit-keyframes shadow {
+  from {
+    -webkit-box-shadow: 0;
+            box-shadow: 0;
+  }
+  to {
+    -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes shadow {
+  from {
+    -webkit-box-shadow: 0;
+            box-shadow: 0;
+  }
+  to {
+    -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+  }
+}
+
+@-webkit-keyframes saturate {
+  from {
+    -webkit-filter: grayscale(70%);
+            filter: grayscale(70%);
+  }
+  to {
+    -webkit-filter: none;
+            filter: none;
+  }
+}
+
+@keyframes saturate {
+  from {
+    -webkit-filter: grayscale(70%);
+            filter: grayscale(70%);
+  }
+  to {
+    -webkit-filter: none;
+            filter: none;
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -269,19 +353,27 @@ body {
   }
 }
 
-.main-header__nav__item--active {
+.main-header__nav__item::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+  background: #fff;
+}
+
+.main-header__nav__item--active, .main-header__nav__item:hover {
   color: #fff;
   font-family: "Avenir Next Medium";
 }
 
-.main-header__nav__item--active::before {
-  content: "";
-  position: absolute;
-  height: 4px;
+.main-header__nav__item--active::before, .main-header__nav__item:hover::before {
   width: 100%;
-  left: 0;
-  bottom: 0;
-  background: #fff;
+  -webkit-animation: expand-width linear 0.15s;
+          animation: expand-width linear 0.15s;
 }
 
 .hero {
@@ -431,8 +523,8 @@ body {
 }
 
 .gallery {
-  background: #fafafa;
   padding: 32px 0;
+  background: #fafafa;
 }
 
 @media screen and (min-width: 1080px) {
@@ -461,9 +553,22 @@ body {
   }
 }
 
+.gallery .hover-border {
+  margin-bottom: 16px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.gallery .hover-border:hover {
+  -webkit-animation: shadow linear 0.15s forwards;
+          animation: shadow linear 0.15s forwards;
+}
+
 .gallery__img {
   width: 100%;
-  margin-bottom: 16px;
+  height: 100%;
+  -webkit-filter: grayscale(70%);
+          filter: grayscale(70%);
 }
 
 @media screen and (min-width: 720px) {
@@ -476,6 +581,11 @@ body {
   .gallery__img {
     margin: 0;
   }
+}
+
+.gallery__img:hover {
+  -webkit-animation: scale-up ease-in-out 0.4s forwards, saturate ease-in-out 0.4s forwards;
+          animation: scale-up ease-in-out 0.4s forwards, saturate ease-in-out 0.4s forwards;
 }
 
 .main-footer {
