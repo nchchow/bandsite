@@ -1,14 +1,12 @@
 // HERO
 .hero {
 	position: relative;
-	height: 183px;
+	height: 55vw;
+	min-height: 183px;
 	background: url("../assets/images/Photo-hero.jpg");
 	background-size: cover;
-	@include tablet() {
-		height: 400px;
-	}
 	@include desktop() {
-		height: 670px;
+		max-height: 670px;
 	}
 
 	&__title {

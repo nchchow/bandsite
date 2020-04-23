@@ -286,20 +286,15 @@ body {
 
 .hero {
   position: relative;
-  height: 183px;
+  height: 55vw;
+  min-height: 183px;
   background: url("../assets/images/Photo-hero.jpg");
   background-size: cover;
 }
 
-@media screen and (min-width: 720px) {
-  .hero {
-    height: 400px;
-  }
-}
-
 @media screen and (min-width: 1080px) {
   .hero {
-    height: 670px;
+    max-height: 670px;
   }
 }
 

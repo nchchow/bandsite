@@ -57,6 +57,7 @@
 			@include tablet() {
 				width: 80px;
 			}
+
 			&--active {
 				color: #fff;
 				font-family: $font-medium;
