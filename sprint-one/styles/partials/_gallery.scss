@@ -2,6 +2,9 @@
 .gallery {
 	background: $text-field-background-fill;
 	padding: 32px 0;
+	@include desktop() {
+		padding: 48px 0 40px;
+	}
 
 	&__title {
 		margin: 0 0 24px 0;
@@ -11,14 +14,19 @@
 		@include tablet() {
 			@include text-size-height(2.25rem, 2.75rem);
 		}
+		@include desktop() {
+			margin: 0 0 64px 0;
+		}
 	}
 
 	&__img {
 		width: 100%;
 		margin-bottom: 16px;
 		@include tablet() {
-			height: 126px;
-			width: 224px;
+			margin: 0;
+		}
+		@include desktop() {
+			margin: 0;
 		}
 	}
 }

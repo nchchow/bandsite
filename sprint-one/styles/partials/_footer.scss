@@ -1,6 +1,6 @@
 // FOOTER
 .main-footer {
-	padding-bottom: 20px;
+	padding-bottom: 5px;
 	background: $navigation-background-fill;
 	color: #fff;
 	text-transform: capitalize;
@@ -11,6 +11,10 @@
 		font-family: $font-bold;
 		@include tablet() {
 			@include text-size-height(2.25rem, 2.75rem);
+			padding: 40px 0;
+		}
+		@include desktop() {
+			padding: 48px 0 56px;
 		}
 	}
 
@@ -22,26 +26,32 @@
 		@include tablet() {
 			justify-content: flex-start;
 		}
+		@include desktop() {
+			margin-right: auto;
+			margin-left: 64px;
+		}
 
 		&__link {
 			@include tablet() {
-				margin-right: 28px;
+				margin-right: 32px;
 			}
-		}
-
-		&__icon {
 		}
 	}
 
 	&__logo {
 		display: none;
+		height: 20px;
+		width: 120px;
 		@include tablet() {
 			display: block;
 		}
 	}
 
 	&__contacts {
-		font-size: 0.8rem;
+		@include text-size-height(0.8rem, 1.125rem);
+		@include tablet() {
+			@include text-size-height(1rem, 1.3rem);
+		}
 	}
 
 	&__contact {
@@ -58,13 +68,14 @@
 			font-size: inherit;
 
 			&:first-of-type {
-				margin-top: 16px;
+				margin-top: 24px;
 			}
 		}
 
 		&__email {
 			font-family: $font-light;
 			text-transform: lowercase;
+			margin: 24px 0 0 0;
 
 			&--cap {
 				text-transform: none;
@@ -73,8 +84,11 @@
 	}
 
 	&__legal {
-		margin: 28px 0;
+		margin: 40px 0;
 		font-family: $font-light;
 		font-size: 0.8rem;
+		@include tablet() {
+			font-size: 1rem;
+		}
 	}
 }

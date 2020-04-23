@@ -52,26 +52,35 @@
 }
 
 // flexed when screen is larger than mobile version
-.flex-container--lg {
-	@include tablet() {
-		display: flex;
+// util container for footer content
+.flex-container {
+	&--lg {
+		@include tablet() {
+			display: flex;
+		}
+	}
+	&--between {
+		@extend .flex-container--lg;
+		justify-content: space-between;
+		align-items: baseline;
+	}
+	&--max-width {
+		@extend .flex-container--lg;
+		justify-content: space-between;
+		align-items: baseline;
+		max-width: 800px;
 	}
 }
 
 // util container for gallery images
-.img-container {
-	@extend .flex-container--lg;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
-// util container for footer content
-.footer-container {
-	margin-bottom: 28px;
-	@extend .flex-container--lg;
-	justify-content: space-between;
-	align-items: baseline;
+.grid-container {
+	@include tablet() {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-template-rows: auto auto auto;
+		column-gap: 24px;
+		row-gap: 24px;
+	}
 }
 
 // remove line break for larger screen sizes
