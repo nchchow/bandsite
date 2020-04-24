@@ -67,7 +67,7 @@ body {
   .container {
     margin: 0 24px;
   }
-  .container--left {
+  .container--logo {
     margin-left: 24px;
   }
 }
@@ -76,7 +76,7 @@ body {
   .container {
     margin: 0 180px;
   }
-  .container--left {
+  .container--logo {
     margin-left: 180px;
   }
 }
@@ -587,13 +587,13 @@ body {
 
 .main-footer__logo {
   display: none;
-  height: 20px;
-  width: 120px;
 }
 
 @media screen and (min-width: 720px) {
   .main-footer__logo {
     display: block;
+    height: 20px;
+    width: 120px;
   }
 }
 

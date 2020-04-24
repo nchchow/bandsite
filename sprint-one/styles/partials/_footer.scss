@@ -40,10 +40,10 @@
 
 	&__logo {
 		display: none;
-		height: 20px;
-		width: 120px;
 		@include tablet() {
 			display: block;
+			height: 20px;
+			width: 120px;
 		}
 	}
 
