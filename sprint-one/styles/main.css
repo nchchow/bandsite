@@ -208,19 +208,19 @@ body {
   padding: 12px 0;
 }
 
-.main-header__nav {
+.main-nav {
   width: 100%;
   height: 50%;
 }
 
 @media screen and (min-width: 720px) {
-  .main-header__nav {
+  .main-nav {
     width: 284px;
     height: 100%;
   }
 }
 
-.main-header__nav__list {
+.main-nav__list {
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -234,7 +234,7 @@ body {
 }
 
 @media screen and (min-width: 720px) {
-  .main-header__nav__list {
+  .main-nav__list {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
@@ -242,7 +242,7 @@ body {
   }
 }
 
-.main-header__nav__link {
+.main-nav__link {
   padding-bottom: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -254,12 +254,12 @@ body {
 }
 
 @media screen and (min-width: 720px) {
-  .main-header__nav__link {
+  .main-nav__link {
     padding-bottom: 0;
   }
 }
 
-.main-header__nav__item {
+.main-nav__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -278,12 +278,12 @@ body {
 }
 
 @media screen and (min-width: 720px) {
-  .main-header__nav__item {
+  .main-nav__item {
     width: 80px;
   }
 }
 
-.main-header__nav__item::before {
+.main-nav__item::before {
   content: "";
   position: absolute;
   height: 4px;
@@ -297,12 +297,12 @@ body {
   transition: ease 0.1s;
 }
 
-.main-header__nav__item--active, .main-header__nav__item:hover {
+.main-nav__item--active, .main-nav__item:hover {
   color: #fff;
   font-family: "Avenir Next Medium";
 }
 
-.main-header__nav__item--active::before, .main-header__nav__item:hover::before {
+.main-nav__item--active::before, .main-nav__item:hover::before {
   width: 100%;
 }
 
@@ -409,25 +409,25 @@ body {
   }
 }
 
-.about__summary__title {
+.about__summary--title {
   margin: 40px 0 0 0;
   font-family: "Avenir Next Demi Bold";
   font-size: inherit;
 }
 
 @media screen and (min-width: 720px) {
-  .about__summary__title {
+  .about__summary--title {
     font-size: 1.5rem;
   }
 }
 
 @media screen and (min-width: 1080px) {
-  .about__summary__title {
+  .about__summary--title {
     margin: 56px 0 0 0;
   }
 }
 
-.about__summary__content {
+.about__summary--content {
   margin: 24px 0 0 0;
   font-family: "Avenir Next Ultra Light";
   font-size: 0.8rem;
@@ -435,19 +435,19 @@ body {
 }
 
 @media screen and (min-width: 720px) {
-  .about__summary__content {
+  .about__summary--content {
     font-size: 0.9rem;
   }
-  .about__summary__content:first-child {
+  .about__summary--content:first-child {
     padding-right: 24px;
   }
 }
 
 @media screen and (min-width: 1080px) {
-  .about__summary__content {
+  .about__summary--content {
     margin: 32px 0 0 0;
   }
-  .about__summary__content:first-child {
+  .about__summary--content:first-child {
     padding-right: 40px;
   }
 }
@@ -614,29 +614,29 @@ body {
   line-height: 1.1rem;
 }
 
-.main-footer__contact__name {
+.main-footer__contact--name {
   margin: 0;
   font-family: "Avenir Next Demi Bold";
   font-size: inherit;
 }
 
-.main-footer__contact__address {
+.main-footer__contact--address {
   margin: 0;
   font-family: "Avenir Next Ultra Light";
   font-size: inherit;
 }
 
-.main-footer__contact__address:first-of-type {
+.main-footer__contact--address:first-of-type {
   margin-top: 24px;
 }
 
-.main-footer__contact__email {
+.main-footer__contact--email {
   font-family: "Avenir Next Ultra Light";
   text-transform: lowercase;
   margin: 24px 0 0 0;
 }
 
-.main-footer__contact__email--cap {
+.main-footer__contact--email--cap {
   text-transform: none;
 }
 

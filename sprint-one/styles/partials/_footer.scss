@@ -57,13 +57,13 @@
 	&__contact {
 		margin-top: 24px;
 		line-height: 1.1rem;
-		&__name {
+		&--name {
 			margin: 0;
 			font-family: $font-demi;
 			font-size: inherit;
 		}
 
-		&__address {
+		&--address {
 			margin: 0;
 			font-family: $font-light;
 			font-size: inherit;
@@ -73,7 +73,7 @@
 			}
 		}
 
-		&__email {
+		&--email {
 			font-family: $font-light;
 			text-transform: lowercase;
 			margin: 24px 0 0 0;
