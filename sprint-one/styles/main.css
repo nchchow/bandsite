@@ -81,6 +81,13 @@ body {
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .container {
+    margin: 0 auto;
+    width: 1080px;
+  }
+}
+
 .overlay {
   position: absolute;
   width: 100%;
@@ -90,7 +97,7 @@ body {
   background: rgba(50, 50, 50, 0.5);
 }
 
-.center-text-vertical {
+.center--vertical {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

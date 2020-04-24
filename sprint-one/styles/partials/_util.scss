@@ -15,6 +15,11 @@
 			margin-left: 180px;
 		}
 	}
+
+	@include large-desktop() {
+		margin: 0 auto;
+		width: 1080px;
+	}
 }
 
 // adds opaque overlay to child elements
@@ -27,14 +32,14 @@
 	background: rgba($navigation-background-fill, 0.5);
 }
 
-// centers text along vertical axis
-.center-text-vertical {
+// vertically center child elements
+.center--vertical {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-// max width and center container
+// container with max width that is centered horizontally
 .max-width-container {
 	margin: 0 auto;
 	max-width: 896px;
