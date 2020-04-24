@@ -27,7 +27,7 @@
 		line-height: 0; // prevents unwanted padding on bottom of image
 		transition: linear 0.15s;
 		&:hover {
-			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+			box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.3);
 		}
 	}
 
