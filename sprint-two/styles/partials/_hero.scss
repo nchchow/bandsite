@@ -1,0 +1,21 @@
+// HERO
+.hero {
+	position: relative;
+	height: 55vw;
+	min-height: 183px;
+	background: url("../assets/images/Photo-hero.jpg");
+	background-size: cover;
+	@include desktop() {
+		max-height: 670px;
+	}
+
+	&__title {
+		margin: 0;
+		font-family: $font-bold;
+		@include text-size-height(1.5rem, 2rem);
+		color: #fff;
+		@include tablet() {
+			@include text-size-height(3.75rem, 4.25rem);
+		}
+	}
+}

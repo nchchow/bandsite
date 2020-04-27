@@ -1,0 +1,96 @@
+// UTIL
+// adds left and right margin to child elements
+.container {
+	margin: 0 16px;
+	@include tablet() {
+		margin: 0 24px;
+		&--logo {
+			margin-left: 24px;
+		}
+	}
+
+	@include desktop() {
+		margin: 0 180px;
+		&--logo {
+			margin-left: 180px;
+		}
+	}
+
+	@include large-desktop() {
+		margin: 0 auto;
+		width: 1080px;
+	}
+}
+
+// adds opaque overlay to child elements
+.overlay {
+	position: absolute; // child elements must set position to absolute
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba($navigation-background-fill, 0.5);
+}
+
+// vertically center child elements
+.center--vertical {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+// container with max width that is centered horizontally
+.max-width-container {
+	margin: 0 auto;
+	max-width: 896px;
+}
+
+// aspect ratio for child element
+.aspect-ratio-container {
+	position: relative; // child elements must set position to absolute
+
+	&::after {
+		content: "";
+		display: block;
+		padding-top: 50%; // 2:1 ratio
+	}
+}
+
+// flexed when screen is larger than mobile version
+// util container for footer content
+.flex-container {
+	&--lg {
+		@include tablet() {
+			display: flex;
+		}
+	}
+	&--between {
+		@extend .flex-container--lg;
+		justify-content: space-between;
+		align-items: baseline;
+	}
+	&--max-width {
+		@extend .flex-container--lg;
+		justify-content: space-between;
+		align-items: baseline;
+		max-width: 800px;
+	}
+}
+
+// util container for gallery images
+.grid-container {
+	@include tablet() {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-template-rows: auto auto auto;
+		column-gap: 24px;
+		row-gap: 24px;
+	}
+}
+
+// remove line break for larger screen sizes
+.line-break {
+	@include tablet() {
+		display: none;
+	}
+}

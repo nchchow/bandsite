@@ -1,0 +1,23 @@
+// media queries
+@mixin tablet {
+	@media screen and (min-width: $tablet-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media screen and (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin large-desktop {
+	@media screen and (min-width: $large-desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin text-size-height($size, $height) {
+	font-size: $size;
+	line-height: $height;
+}
