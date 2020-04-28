@@ -1,4 +1,4 @@
-let comments = [
+const comments = [
 	{
 		userName: "Micheal Lyons",
 		datePosted: "12/18/2018",
@@ -18,3 +18,64 @@ let comments = [
 			"How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
 	},
 ];
+
+const commentsList = document.querySelector(".comments__list");
+
+function constructTextWrapperTop(comment) {
+	const textWrapperTop = document.createElement("div");
+	textWrapperTop.classList.add("text-wrapper--top");
+
+	const nameElem = document.createElement("p");
+	nameElem.classList.add("comment__name");
+	nameElem.textContent = comment.userName;
+
+	const dateElem = document.createElement("p");
+	dateElem.classList.add("comment__date");
+	dateElem.textContent = comment.datePosted;
+
+	textWrapperTop.appendChild(nameElem);
+	textWrapperTop.appendChild(dateElem);
+
+	return textWrapperTop;
+}
+
+function constructTextWrapper(comment) {
+	const textWrapper = document.createElement("div");
+	textWrapper.classList.add("text-wrapper");
+
+	textWrapper.appendChild(constructTextWrapperTop(comment));
+	const commentElem = document.createElement("p");
+	commentElem.classList.add("comment__content");
+	commentElem.textContent = comment.content;
+	textWrapper.appendChild(commentElem);
+
+	return textWrapper;
+}
+
+function displayComment(comment) {
+	const commentElem = document.createElement("article");
+	commentElem.classList.add("comment");
+
+	const userIcon = document.createElement("div");
+	userIcon.classList.add("comment__user-icon");
+
+	commentElem.appendChild(userIcon);
+	commentElem.appendChild(constructTextWrapper(comment));
+
+	return commentElem;
+}
+
+function constructDivider() {
+	const dividerElem = document.createElement("hr");
+	dividerElem.classList.add("divider");
+	return dividerElem;
+}
+
+function render(comments) {
+	for (comment of comments) {
+		commentsList.appendChild(displayComment(comment));
+		commentsList.appendChild(constructDivider());
+	}
+}
+
+render(comments);
