@@ -22,7 +22,7 @@
 	line-height: $height;
 }
 
-@mixin focus-input-style() {
+@mixin focused-input() {
 	outline: none;
 	padding: 13px;
 	border: 2px solid $primary-CTA;

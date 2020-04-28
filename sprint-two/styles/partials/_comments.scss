@@ -42,7 +42,7 @@
 				height: 48px;
 				border-radius: 4px;
 				&:focus {
-					@include focus-input-style();
+					@include input-focused();
 				}
 			}
 		}
@@ -64,7 +64,7 @@
 				height: 96px;
 				border-radius: 4px;
 				&:focus {
-					@include focus-input-style();
+					@include input-focused();
 				}
 			}
 		}
