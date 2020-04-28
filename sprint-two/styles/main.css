@@ -563,10 +563,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 32px;
+  width: 100%;
 }
 
 .comments .new-comment__form {
-  width: 100%;
+  width: 70vw;
 }
 
 .comments .new-comment__user-icon {
@@ -598,8 +599,8 @@ body {
 .comments .new-comment__name--input {
   border: 1px solid #e1e1e1;
   padding-left: 14px;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
   height: 48px;
   border-radius: 4px;
 }
@@ -631,8 +632,8 @@ body {
 .comments .new-comment__content--input {
   border: 1px solid #e1e1e1;
   padding: 14px;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
   resize: none;
   height: 96px;
   border-radius: 4px;

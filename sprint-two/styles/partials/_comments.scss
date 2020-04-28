@@ -12,9 +12,10 @@
 	.new-comment {
 		display: flex;
 		padding-bottom: 32px;
+		width: 100%;
 
 		&__form {
-			width: 100%;
+			width: 70vw;
 		}
 
 		&__user-icon {
@@ -37,7 +38,7 @@
 			&--input {
 				border: 1px solid $text-field-border;
 				padding-left: 14px;
-				@include text-size-height(0.75rem, 1.25rem);
+				@include text-size-height(0.9rem, 1.4rem);
 				height: 48px;
 				border-radius: 4px;
 				&:focus {
@@ -58,7 +59,7 @@
 			&--input {
 				border: 1px solid $text-field-border;
 				padding: 14px;
-				@include text-size-height(0.75rem, 1.25rem);
+				@include text-size-height(0.9rem, 1.4rem);
 				resize: none;
 				height: 96px;
 				border-radius: 4px;
