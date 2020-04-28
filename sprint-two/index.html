@@ -141,36 +141,40 @@
         <!-- form -->
         <form action="" class="new-comment__form">
           <!-- name -->
-          <label for="new-comment__name--input" class="new-comment__name--label">NAME</label>
-          <input type="text" class="new-comment__name--input">
+          <div class="new-comment__name">
+            <label for="new-comment__name--input" class="new-comment__name--label">NAME</label>
+            <input type="text" class="new-comment__name--input" placeholder="Mohan Muruge">
+          </div>
           <!-- comment -->
-          <label for="new-comment__comment--input" class="new-comment__comment--label">COMMENT</label>
-          <textarea name="" id="" cols="30" rows="10" class="new-comment__comment--input"
-            placeholder="Add a new comment"></textarea>
+          <div class="new-comment__content">
+            <label for="comment-content" class="new-comment__content--label">COMMENT</label>
+            <textarea name="comment-content" id="" cols="30" rows="10" class="new-comment__content--input"
+              placeholder="Add a new comment"></textarea>
+          </div>
           <!-- button -->
           <button class="new-comment__button">COMMENT</button>
         </form>
       </section>
-
+      <hr class="divider">
       <!-- comment list -->
       <section class="comments__list">
         <!-- temp comment -->
         <article class="comment">
           <!-- user icon -->
-          <img src="" alt="user icon" class="comment__user-icon">
+          <div class="comment__user-icon"></div>
           <div class="text-wrapper">
             <div class="text-wrapper--top">
               <!-- name -->
-              <h6 class="comment__name">Theodore Duncan</h6>
+              <p class="comment__name">Theodore Duncan</p>
               <!-- date -->
               <p class="comment__date">11/15/2018</p>
             </div>
             <!-- comment -->
-            <p class="comment__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex facilis
-              perferendis, saepe neque eaque non praesentium accusamus ullam, unde, dolorem iure nobis? Tempore iure
-              ullam et numquam porro quaerat itaque!</p>
+            <p class="comment__content">How can someone be so good!!! You can tell he lives for this and loves to do it
+              every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!</p>
           </div>
         </article>
+        <hr class="divider">
       </section>
     </div>
   </section>

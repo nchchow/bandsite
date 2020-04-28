@@ -88,9 +88,25 @@
 	}
 }
 
+.text-wrapper {
+	width: 100%;
+
+	&--top {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+	}
+}
+
 // remove line break for larger screen sizes
 .line-break {
 	@include tablet() {
 		display: none;
 	}
+}
+
+.divider {
+	margin: 0;
+	border: 0;
+	border-bottom: 1px solid $text-field-border;
 }

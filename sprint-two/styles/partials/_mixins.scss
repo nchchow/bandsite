@@ -21,3 +21,9 @@
 	font-size: $size;
 	line-height: $height;
 }
+
+@mixin focus-input-style() {
+	outline: none;
+	padding: 13px;
+	border: 2px solid $primary-CTA;
+}
