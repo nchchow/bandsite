@@ -20,6 +20,11 @@
 		margin: 0 auto;
 		width: 1080px;
 	}
+
+	&--comments {
+		margin: auto;
+		max-width: 520px;
+	}
 }
 
 // adds opaque overlay to child elements

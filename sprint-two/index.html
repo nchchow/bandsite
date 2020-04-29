@@ -135,33 +135,35 @@
       <!-- title -->
       <h1 class="comments__title">Join the Conversation</h1>
       <!-- new comment section -->
-      <section class="new-comment">
-        <!-- user icon -->
-        <div>
-          <img class="new-comment__user-icon" src="./assets/images/Mohan-muruge.jpg" alt="user icon">
-        </div>
-        <!-- form -->
-        <form action="" class="new-comment__form">
-          <!-- name -->
-          <div class="new-comment__name">
-            <label for="new-comment__name--input" class="new-comment__name--label">NAME</label>
-            <input type="text" class="new-comment__name--input" placeholder="Mohan Muruge">
+      <div class="container--comments">
+        <section class="new-comment">
+          <!-- user icon -->
+          <div>
+            <img class="new-comment__user-icon" src="./assets/images/Mohan-muruge.jpg" alt="user icon">
           </div>
-          <!-- comment -->
-          <div class="new-comment__content">
-            <label for="comment-content" class="new-comment__content--label">COMMENT</label>
-            <textarea name="comment-content" id="" cols="30" rows="10" class="new-comment__content--input"
-              placeholder="Add a new comment"></textarea>
-          </div>
-          <!-- button -->
-          <button class="new-comment__button">COMMENT</button>
-        </form>
-      </section>
-      <hr class="divider">
-      <!-- comment list -->
-      <section class="comments__list">
-        <!-- js inserted comments -->
-      </section>
+          <!-- form -->
+          <form action="" class="new-comment__form">
+            <!-- name -->
+            <div class="new-comment__name">
+              <label for="new-comment__name--input" class="new-comment__name--label">NAME</label>
+              <input type="text" class="new-comment__name--input" placeholder="Mohan Muruge">
+            </div>
+            <!-- comment -->
+            <div class="new-comment__content">
+              <label for="comment-content" class="new-comment__content--label">COMMENT</label>
+              <textarea name="comment-content" id="" cols="30" rows="10" class="new-comment__content--input"
+                placeholder="Add a new comment"></textarea>
+            </div>
+            <!-- button -->
+            <button class="new-comment__button">COMMENT</button>
+          </form>
+        </section>
+        <hr class="divider">
+        <!-- comment list -->
+        <section class="comments__list">
+          <!-- js inserted comments -->
+        </section>
+      </div>
     </div>
   </section>
 
@@ -226,7 +228,7 @@
     </div>
   </footer>
 
-  <script src="./scripts/script.js"></script>
+  <script src="./scripts/render.js"></script>
 </body>
 
 </html>

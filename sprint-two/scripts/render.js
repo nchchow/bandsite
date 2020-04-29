@@ -38,7 +38,6 @@ function textWrapperTop(comment) {
 
 	const textWrapperTop = classElement("text-wrapper--top", "div");
 	textWrapperTop.append(nameElem, dateElem);
-	// textWrapperTop.appendChild(dateElem);
 
 	return textWrapperTop;
 }
