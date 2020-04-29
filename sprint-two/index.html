@@ -142,20 +142,21 @@
             <img class="new-comment__user-icon" src="./assets/images/Mohan-muruge.jpg" alt="user icon">
           </div>
           <!-- form -->
-          <form action="" class="new-comment__form">
+          <form action="" method="POST" class="new-comment__form">
             <!-- name -->
             <div class="new-comment__name">
-              <label for="new-comment__name--input" class="new-comment__name--label">NAME</label>
-              <input type="text" class="new-comment__name--input" placeholder="Mohan Muruge" value="Mohan Muruge">
+              <label for="name" class="new-comment__name--label">NAME</label>
+              <input type="text" name="name" id="name" class="new-comment__name--input" placeholder="Mohan Muruge"
+                value="Mohan Muruge">
             </div>
             <!-- comment -->
             <div class="new-comment__content">
-              <label for="comment-content" class="new-comment__content--label">COMMENT</label>
-              <textarea name="comment-content" id="" cols="30" rows="10" class="new-comment__content--input"
+              <label for="content" class="new-comment__content--label">COMMENT</label>
+              <textarea name="content" id="content" cols="30" rows="10" class="new-comment__content--input"
                 placeholder="Add a new comment"></textarea>
             </div>
             <!-- button -->
-            <button class="new-comment__button">COMMENT</button>
+            <button type="submit" class="new-comment__button">COMMENT</button>
           </form>
         </section>
         <hr class="divider">
