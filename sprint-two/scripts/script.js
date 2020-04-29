@@ -21,61 +21,63 @@ const comments = [
 
 const commentsList = document.querySelector(".comments__list");
 
-function constructTextWrapperTop(comment) {
-	const textWrapperTop = document.createElement("div");
-	textWrapperTop.classList.add("text-wrapper--top");
+// helper function to create element and add class, returns the element
+function classElement(classStr, elementStr) {
+	const elem = document.createElement(elementStr);
+	elem.classList.add(classStr);
+	return elem;
+}
 
-	const nameElem = document.createElement("p");
-	nameElem.classList.add("comment__name");
+// constructs top text wrapper and returns it
+function textWrapperTop(comment) {
+	const nameElem = classElement("comment__name", "p");
 	nameElem.textContent = comment.userName;
 
-	const dateElem = document.createElement("p");
-	dateElem.classList.add("comment__date");
+	const dateElem = classElement("comment__date", "p");
 	dateElem.textContent = comment.datePosted;
 
-	textWrapperTop.appendChild(nameElem);
-	textWrapperTop.appendChild(dateElem);
+	const textWrapperTop = classElement("text-wrapper--top", "div");
+	textWrapperTop.append(nameElem, dateElem);
+	// textWrapperTop.appendChild(dateElem);
 
 	return textWrapperTop;
 }
 
-function constructTextWrapper(comment) {
-	const textWrapper = document.createElement("div");
-	textWrapper.classList.add("text-wrapper");
-
-	textWrapper.appendChild(constructTextWrapperTop(comment));
-	const commentElem = document.createElement("p");
-	commentElem.classList.add("comment__content");
+// constructs text wrapper for comments and returns it
+function textWrapper(comment) {
+	// comment content
+	const commentElem = classElement("comment__content", "p");
 	commentElem.textContent = comment.content;
-	textWrapper.appendChild(commentElem);
+
+	const textWrapper = classElement("text-wrapper", "div");
+	textWrapper.append(textWrapperTop(comment), commentElem);
 
 	return textWrapper;
 }
 
+// contructs comment and returns it
 function displayComment(comment) {
-	const commentElem = document.createElement("article");
-	commentElem.classList.add("comment");
+	// user icon
+	const userIcon = classElement("comment__user-icon", "div");
 
-	const userIcon = document.createElement("div");
-	userIcon.classList.add("comment__user-icon");
-
-	commentElem.appendChild(userIcon);
-	commentElem.appendChild(constructTextWrapper(comment));
+	const commentElem = classElement("comment", "article");
+	commentElem.append(userIcon, textWrapper(comment));
 
 	return commentElem;
 }
 
-function constructDivider() {
-	const dividerElem = document.createElement("hr");
-	dividerElem.classList.add("divider");
+// construct line divider between comments and returns it
+function divider() {
+	const dividerElem = classElement("divider", "hr");
+
 	return dividerElem;
 }
 
+// renders comments to screen
 function render(comments) {
-	for (comment of comments) {
-		commentsList.appendChild(displayComment(comment));
-		commentsList.appendChild(constructDivider());
-	}
+	comments.forEach((comment) => {
+		commentsList.append(displayComment(comment), divider());
+	});
 }
 
 render(comments);
