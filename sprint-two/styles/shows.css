@@ -406,9 +406,33 @@ body {
   }
 }
 
+@media screen and (min-width: 1080px) {
+  .shows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .shows__title {
   margin: 32px 0 40px;
   font-family: "Avenir Next Bold";
+}
+
+@media screen and (min-width: 1080px) {
+  .shows__title {
+    margin: 48px 0;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .shows__list {
+    margin: 48px 0 24px;
+    width: 804px;
+  }
 }
 
 .shows__list .show {
@@ -421,12 +445,42 @@ body {
           flex-direction: column;
 }
 
+@media screen and (min-width: 720px) {
+  .shows__list .show {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  .shows__list .show:not(:first-child) .show__date::before {
+    display: none;
+  }
+  .shows__list .show:not(:first-child) .show__venue::before {
+    display: none;
+  }
+  .shows__list .show:not(:first-child) .show__location::before {
+    display: none;
+  }
+}
+
 .shows__list .show__date {
   margin: 40px 0 60px;
   position: relative;
   font-family: "Avenir Next Demi Bold";
   font-size: 0.85rem;
   line-height: 1.15rem;
+}
+
+@media screen and (min-width: 720px) {
+  .shows__list .show__date {
+    margin: 0;
+  }
 }
 
 .shows__list .show__date::before {
@@ -438,6 +492,12 @@ body {
   letter-spacing: 0.05rem;
   font-size: 0.75rem;
   line-height: 1.25rem;
+}
+
+@media screen and (min-width: 720px) {
+  .shows__list .show__date::before {
+    content: "DATES";
+  }
 }
 
 .shows__list .show__venue {
@@ -456,6 +516,12 @@ body {
   letter-spacing: 0.05rem;
   font-size: 0.75rem;
   line-height: 1.25rem;
+}
+
+@media screen and (min-width: 720px) {
+  .shows__list .show__venue {
+    margin-bottom: 0;
+  }
 }
 
 .shows__list .show__location {
@@ -479,8 +545,20 @@ body {
   margin: 32px 0 16px;
 }
 
+@media screen and (min-width: 720px) {
+  .shows__list .show__buy-button {
+    margin: 0 0 16px;
+  }
+}
+
 .shows__list__divider {
   margin-bottom: 32px;
+}
+
+@media screen and (min-width: 720px) {
+  .shows__list__divider {
+    margin-bottom: 16px;
+  }
 }
 
 .main-footer {

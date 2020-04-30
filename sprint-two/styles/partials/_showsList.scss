@@ -1,22 +1,63 @@
 // SHOWS LIST
 .shows {
+	@include desktop() {
+		display: flex;
+		justify-content: space-between;
+	}
 	&__title {
 		margin: 32px 0 40px;
 		font-family: $font-bold;
+		@include desktop() {
+			margin: 48px 0;
+		}
 	}
 
 	&__list {
+		@include desktop() {
+			margin: 48px 0 24px;
+			width: 804px;
+		}
+
 		.show {
 			display: flex;
 			flex-direction: column;
+			@include tablet() {
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: baseline;
+				&:not(:first-child) {
+					.show__date {
+						&::before {
+							display: none;
+						}
+					}
+					.show__venue {
+						&::before {
+							display: none;
+						}
+					}
+					.show__location {
+						&::before {
+							display: none;
+						}
+					}
+				}
+			}
+
 			&__date {
 				margin: 40px 0 60px;
 				position: relative;
 				font-family: $font-demi;
 				@include text-size-height(0.85rem, 1.15rem);
+				@include tablet() {
+					margin: 0;
+				}
 				&::before {
 					content: "DATE";
 					@include table-header-style();
+					@include tablet() {
+						content: "DATES";
+					}
 				}
 			}
 
@@ -27,6 +68,9 @@
 				&::before {
 					content: "VENUE";
 					@include table-header-style();
+				}
+				@include tablet() {
+					margin-bottom: 0;
 				}
 			}
 
@@ -42,11 +86,17 @@
 			&__buy-button {
 				@extend .button;
 				margin: 32px 0 16px;
+				@include tablet() {
+					margin: 0 0 16px;
+				}
 			}
 		}
 		&__divider {
 			@extend .divider;
 			margin-bottom: 32px;
+			@include tablet() {
+				margin-bottom: 16px;
+			}
 		}
 	}
 }
