@@ -59,6 +59,7 @@ function classElement(classStr, elementStr) {
 	return elem;
 }
 
+/* COMMENT CONSTRUCTOR FUNCTIONS */
 // contructs comment elem and returns it
 function displayComment(comment) {
 	const userIcon = classElement("comment__user-icon", "div");
