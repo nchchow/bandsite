@@ -66,7 +66,7 @@ function displayComment(comment) {
 	const commentElem = classElement("comment", "article");
 	commentElem.append(userIcon, textWrapper(comment));
 
-	const dividerElem = classElement("divider", "hr");
+	const dividerElem = classElement("comments__divider", "hr");
 	return [commentElem, dividerElem];
 }
 
@@ -76,7 +76,7 @@ function textWrapper(comment) {
 	const commentElem = classElement("comment__content", "p");
 	commentElem.textContent = comment.content;
 
-	const textWrapper = classElement("text-wrapper", "div");
+	const textWrapper = classElement("comment__text-wrapper", "div");
 	textWrapper.append(textWrapperTop(comment), commentElem);
 
 	return textWrapper;
@@ -90,7 +90,7 @@ function textWrapperTop(comment) {
 	const dateElem = classElement("comment__date", "p");
 	dateElem.textContent = comment.datePosted;
 
-	const textWrapperTop = classElement("text-wrapper--top", "div");
+	const textWrapperTop = classElement("comment__text-wrapper--top", "div");
 	textWrapperTop.append(nameElem, dateElem);
 
 	return textWrapperTop;
