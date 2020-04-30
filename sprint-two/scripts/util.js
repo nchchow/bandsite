@@ -1,3 +1,10 @@
+// helper function to create element and add class, returns the element
+function elementWithClass(elementStr, classStr) {
+	const elem = document.createElement(elementStr);
+	elem.classList.add(classStr);
+	return elem;
+}
+
 // get current date string in mm/dd/yyyy
 function getFormattedDate() {
 	// todo padd with 0 if single digit

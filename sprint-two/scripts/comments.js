@@ -40,13 +40,6 @@ function render(comments) {
 /* 
 COMMENT CONSTRUCTOR FUNCTIONS 
 */
-// helper function to create element and add class, returns the element
-function elementWithClass(elementStr, classStr) {
-	const elem = document.createElement(elementStr);
-	elem.classList.add(classStr);
-	return elem;
-}
-
 // contructs comment elem and comment divider and returns them
 function displayComment(comment) {
 	const userIcon = elementWithClass("div", "comment__user-icon");

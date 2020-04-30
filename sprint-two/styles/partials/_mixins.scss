@@ -27,3 +27,12 @@
 	padding: 13px;
 	border: 2px solid $primary-CTA;
 }
+
+@mixin table-header-style() {
+	position: absolute;
+	top: -2rem;
+	color: $text-label-style;
+	font-family: $font-demi;
+	letter-spacing: 0.05rem;
+	@include text-size-height(0.75rem, 1.25rem);
+}

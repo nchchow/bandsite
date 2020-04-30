@@ -18,37 +18,28 @@
 			display: flex;
 			flex-direction: column;
 			&__date {
-				margin-bottom: 60px;
+				margin: 40px 0 60px;
 				position: relative;
-				&:before {
+				&::before {
 					content: "DATE";
-					position: absolute;
-					top: -2rem;
-					color: $text-label-style;
-					font-size: 0.75rem;
+					@include table-header-style();
 				}
 			}
 
 			&__venue {
 				position: relative;
 				margin-bottom: 60px;
-				&:before {
+				&::before {
 					content: "VENUE";
-					position: absolute;
-					top: -2rem;
-					color: $text-label-style;
-					font-size: 0.75rem;
+					@include table-header-style();
 				}
 			}
 
 			&__location {
 				position: relative;
-				&:before {
+				&::before {
 					content: "LOCATION";
-					position: absolute;
-					top: -2rem;
-					color: $text-label-style;
-					font-size: 0.75rem;
+					@include table-header-style();
 				}
 			}
 

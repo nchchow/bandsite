@@ -379,16 +379,19 @@ body {
 }
 
 .shows__list .show__date {
-  margin-bottom: 60px;
+  margin: 40px 0 60px;
   position: relative;
 }
 
-.shows__list .show__date:before {
+.shows__list .show__date::before {
   content: "DATE";
   position: absolute;
   top: -2rem;
   color: #afafaf;
+  font-family: "Avenir Next Demi Bold";
+  letter-spacing: 0.05rem;
   font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 
 .shows__list .show__venue {
@@ -396,24 +399,30 @@ body {
   margin-bottom: 60px;
 }
 
-.shows__list .show__venue:before {
+.shows__list .show__venue::before {
   content: "VENUE";
   position: absolute;
   top: -2rem;
   color: #afafaf;
+  font-family: "Avenir Next Demi Bold";
+  letter-spacing: 0.05rem;
   font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 
 .shows__list .show__location {
   position: relative;
 }
 
-.shows__list .show__location:before {
+.shows__list .show__location::before {
   content: "LOCATION";
   position: absolute;
   top: -2rem;
   color: #afafaf;
+  font-family: "Avenir Next Demi Bold";
+  letter-spacing: 0.05rem;
   font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 
 .shows__list .show__buy-button {
