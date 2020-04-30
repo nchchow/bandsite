@@ -365,7 +365,8 @@ body {
 }
 
 .shows__title {
-  margin: 32px 0 72px;
+  margin: 32px 0 40px;
+  font-family: "Avenir Next Bold";
 }
 
 .shows__list .show {
@@ -381,6 +382,9 @@ body {
 .shows__list .show__date {
   margin: 40px 0 60px;
   position: relative;
+  font-family: "Avenir Next Demi Bold";
+  font-size: 0.85rem;
+  line-height: 1.15rem;
 }
 
 .shows__list .show__date::before {
@@ -397,6 +401,8 @@ body {
 .shows__list .show__venue {
   position: relative;
   margin-bottom: 60px;
+  font-size: 0.85rem;
+  line-height: 1.15rem;
 }
 
 .shows__list .show__venue::before {
@@ -412,6 +418,8 @@ body {
 
 .shows__list .show__location {
   position: relative;
+  font-size: 0.85rem;
+  line-height: 1.15rem;
 }
 
 .shows__list .show__location::before {

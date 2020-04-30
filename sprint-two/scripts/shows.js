@@ -8,7 +8,7 @@ function render(showsData) {
 	});
 }
 
-// construct each show
+// construct each show element and divider and returns them
 function displayShow(show) {
 	const showElem = elementWithClass("article", "show");
 	const dateElem = elementWithClass("span", "show__date");

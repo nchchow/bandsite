@@ -1,0 +1,52 @@
+// SHOWS LIST
+.shows {
+	&__title {
+		margin: 32px 0 40px;
+		font-family: $font-bold;
+	}
+
+	&__list {
+		.show {
+			display: flex;
+			flex-direction: column;
+			&__date {
+				margin: 40px 0 60px;
+				position: relative;
+				font-family: $font-demi;
+				@include text-size-height(0.85rem, 1.15rem);
+				&::before {
+					content: "DATE";
+					@include table-header-style();
+				}
+			}
+
+			&__venue {
+				position: relative;
+				margin-bottom: 60px;
+				@include text-size-height(0.85rem, 1.15rem);
+				&::before {
+					content: "VENUE";
+					@include table-header-style();
+				}
+			}
+
+			&__location {
+				position: relative;
+				@include text-size-height(0.85rem, 1.15rem);
+				&::before {
+					content: "LOCATION";
+					@include table-header-style();
+				}
+			}
+
+			&__buy-button {
+				@extend .button;
+				margin: 32px 0 16px;
+			}
+		}
+		&__divider {
+			@extend .divider;
+			margin-bottom: 32px;
+		}
+	}
+}
