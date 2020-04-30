@@ -6,24 +6,27 @@ const commentsList = document.querySelector(".comments__list");
 const newCommentForm = document.querySelector(".new-comment__form");
 
 // event listeners
-newCommentForm.addEventListener("submit", (e) => {
+newCommentForm.addEventListener("submit", formHandler);
+
+function formHandler(e) {
 	// prevent page refresh
 	e.preventDefault();
 	// construct a new comment and push to comments array
-	comments.push(newComment(e.target));
-	// clear all comments on screen
-	// commentsList.innerHTML = "";
-	removePageComments();
-	// render comments
-	render(comments);
-	// clear input fields
-	e.target.reset();
-});
-
-// render comments on load
-(function init() {
-	render(comments);
-})();
+	const name = e.target.name.value;
+	const content = e.target.content.value;
+	if (name !== "" && content !== "") {
+		comments.push({
+			userName: name,
+			datePosted: getFormattedDate(),
+			content: content,
+		});
+		removePageComments(); // clear all comments on screen
+		render(comments); // render comments
+		e.target.reset(); // clear input fields
+	} else {
+		alert("Please add name and/or comment");
+	}
+}
 
 // renders comments to screen in reverse chrono order
 function render(comments) {
@@ -80,19 +83,7 @@ function textWrapperTop(comment) {
 	return textWrapperTop;
 }
 
-/*
-	FORM FUNCTIONS
- */
-// create new comment object from form target and returns it
-function newComment(target) {
-	return {
-		userName: target.name.value,
-		datePosted: getFormattedDate(),
-		content: target.content.value,
-	};
-}
-
-// // removes all comments and dividers on page
+// removes all comments and dividers on page
 function removePageComments() {
 	while (commentsList.lastChild) {
 		commentsList.removeChild(commentsList.lastChild);
@@ -115,3 +106,8 @@ function removePageComments() {
 	// 	commentsList.removeChild(dividers[i]);
 	// }
 }
+
+// render comments on load
+(function init() {
+	render(comments);
+})();
