@@ -1,0 +1,27 @@
+// FEATURE
+.site-featured {
+	padding-top: 64px;
+	background: url("../assets/images/Photo-featured.jpeg");
+	background-size: cover;
+	color: #fff;
+	height: 472px;
+
+	&__album {
+		margin: 0;
+		font-family: $font-demi;
+		font-size: 1rem;
+	}
+	&__song {
+		margin: 20px 0 64px;
+		font-family: $font-bold;
+		@include text-size-height(2rem, 2.5rem);
+		letter-spacing: 0.05rem;
+	}
+
+	&__iframe {
+		width: 100%;
+		max-width: 436px;
+		height: 110px;
+		max-height: 146px;
+	}
+}
