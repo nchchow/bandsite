@@ -5,17 +5,36 @@
 	background-size: cover;
 	color: #fff;
 	height: 472px;
+	@include tablet() {
+		padding-top: 96px;
+		height: 670px;
+	}
+	@include desktop() {
+		padding-top: 160px;
+	}
 
 	&__album {
 		margin: 0;
 		font-family: $font-demi;
 		font-size: 1rem;
+		@include tablet() {
+			font-size: 1.5rem;
+		}
 	}
 	&__song {
 		margin: 20px 0 64px;
 		font-family: $font-bold;
 		@include text-size-height(2rem, 2.5rem);
 		letter-spacing: 0.05rem;
+		@include tablet() {
+			margin-top: 48px;
+			padding-right: 20px;
+			max-width: 640px;
+			@include text-size-height(3.75rem, 4.25rem);
+		}
+		@include desktop() {
+			display: inline-block;
+		}
 	}
 
 	&__iframe {
@@ -23,5 +42,9 @@
 		max-width: 436px;
 		height: 110px;
 		max-height: 146px;
+		@include desktop() {
+			margin-right: 0;
+			margin-left: auto;
+		}
 	}
 }
