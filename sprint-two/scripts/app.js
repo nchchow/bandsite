@@ -45,6 +45,7 @@ render(comments);
 
 // renders comments to screen in reverse chrono order
 function render(comments) {
+	// TODO: once comments are sorted, use foreach
 	for (let i = comments.length - 1; i >= 0; i--) {
 		const [comment, divider] = displayComment(comments[i]);
 		commentsList.append(comment, divider);
@@ -60,7 +61,6 @@ function classElement(classStr, elementStr) {
 
 // contructs comment elem and returns it
 function displayComment(comment) {
-	// user icon
 	const userIcon = classElement("comment__user-icon", "div");
 
 	const commentElem = classElement("comment", "article");
@@ -72,7 +72,6 @@ function displayComment(comment) {
 
 // constructs text wrapper for comments and returns it
 function textWrapper(comment) {
-	// comment content
 	const commentElem = classElement("comment__content", "p");
 	commentElem.textContent = comment.content;
 
@@ -99,16 +98,6 @@ function textWrapperTop(comment) {
 /*
 	FORM FUNCTIONS
  */
-// get current date string in mm/dd/yyyy
-function getFormattedDate() {
-	// todo padd with 0 if single digit
-	const date = new Date();
-	const m = date.getMonth() + 1;
-	const d = date.getDate();
-	const y = date.getFullYear();
-	return `${m}/${d}/${y}`;
-}
-
 // create new comment object from form target and returns it
 function newComment(target) {
 	return {
