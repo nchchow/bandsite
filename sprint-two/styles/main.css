@@ -59,24 +59,6 @@ body {
   color: #323232;
 }
 
-.button, .comments .new-comment__button {
-  width: 100%;
-  max-width: 100%;
-  margin-top: 16px;
-  height: 48px;
-  background: #323232;
-  font-family: "Avenir Next Demi Bold";
-  font-size: 0.9rem;
-  color: #fff;
-  border-radius: 4px;
-}
-
-@media screen and (min-width: 720px) {
-  .button, .comments .new-comment__button {
-    max-width: 160px;
-  }
-}
-
 .container {
   margin: 0 16px;
 }
@@ -199,6 +181,28 @@ body {
   margin: 0;
   border: 0;
   border-bottom: 1px solid #e1e1e1;
+}
+
+.button, .comments .new-comment__button {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 16px;
+  height: 48px;
+  background: #323232;
+  font-family: "Avenir Next Demi Bold";
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.button:hover, .comments .new-comment__button:hover {
+  background: #000;
+}
+
+@media screen and (min-width: 720px) {
+  .button, .comments .new-comment__button {
+    max-width: 160px;
+  }
 }
 
 .main-header {
@@ -694,6 +698,13 @@ body {
   right: 0;
   font-size: 0.9rem;
   color: #afafaf;
+}
+
+@media screen and (min-width: 720px) {
+  .comments__list .comment__date {
+    margin-left: 12px;
+    position: static;
+  }
 }
 
 .comments__list .comment__content {
