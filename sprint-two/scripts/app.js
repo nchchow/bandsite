@@ -20,7 +20,7 @@ function formHandler(e) {
 			datePosted: getFormattedDate(),
 			content: content,
 		});
-		removePageComments(); // clear all comments on screen
+		clearComments(); // clear all comments on screen
 		render(comments); // render comments
 		e.target.reset(); // clear input fields
 	} else {
@@ -41,50 +41,42 @@ function render(comments) {
 COMMENT CONSTRUCTOR FUNCTIONS 
 */
 // helper function to create element and add class, returns the element
-function classElement(classStr, elementStr) {
+function elementWithClass(elementStr, classStr) {
 	const elem = document.createElement(elementStr);
 	elem.classList.add(classStr);
 	return elem;
 }
 
-// contructs comment elem and returns it
+// contructs comment elem and comment divider and returns them
 function displayComment(comment) {
-	const userIcon = classElement("comment__user-icon", "div");
+	const userIcon = elementWithClass("div", "comment__user-icon");
 
-	const commentElem = classElement("comment", "article");
+	const commentElem = elementWithClass("article", "comment");
 	commentElem.append(userIcon, textWrapper(comment));
 
-	const dividerElem = classElement("comments__divider", "hr");
+	const dividerElem = elementWithClass("hr", "comments__divider");
 	return [commentElem, dividerElem];
 }
 
 // constructs text wrapper for comments and returns it
 function textWrapper(comment) {
-	const commentElem = classElement("comment__content", "p");
+	const nameElem = elementWithClass("span", "comment__name");
+	nameElem.textContent = comment.userName;
+
+	const dateElem = elementWithClass("span", "comment__date");
+	dateElem.textContent = comment.datePosted;
+
+	const commentElem = elementWithClass("p", "comment__content");
 	commentElem.textContent = comment.content;
 
-	const textWrapper = classElement("comment__text-wrapper", "div");
-	textWrapper.append(textWrapperTop(comment), commentElem);
+	const textWrapper = elementWithClass("div", "comment__text-wrapper");
+	textWrapper.append(nameElem, dateElem, commentElem);
 
 	return textWrapper;
 }
 
-// constructs top text wrapper and returns it
-function textWrapperTop(comment) {
-	const nameElem = classElement("comment__name", "p");
-	nameElem.textContent = comment.userName;
-
-	const dateElem = classElement("comment__date", "p");
-	dateElem.textContent = comment.datePosted;
-
-	const textWrapperTop = classElement("comment__text-wrapper--top", "div");
-	textWrapperTop.append(nameElem, dateElem);
-
-	return textWrapperTop;
-}
-
 // removes all comments and dividers on page
-function removePageComments() {
+function clearComments() {
 	while (commentsList.lastChild) {
 		commentsList.removeChild(commentsList.lastChild);
 	}

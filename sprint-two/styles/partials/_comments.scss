@@ -108,24 +108,18 @@
 			}
 
 			&__text-wrapper {
+				position: relative;
 				width: 100%;
-
-				&--top {
-					display: flex;
-					justify-content: space-between;
-					align-items: baseline;
-				}
 			}
 
 			&__name {
-				margin: 0;
 				font-family: $font-demi;
 				font-size: 0.8rem;
 			}
 
 			&__date {
-				margin: 0;
-				// font-family: $font-regular;
+				position: absolute;
+				right: 0;
 				font-size: 0.9rem;
 				color: $text-label-style;
 			}
@@ -137,9 +131,8 @@
 		}
 	}
 
+	// ASK?
 	&__divider {
-		margin: 0;
-		border: 0;
-		border-bottom: 1px solid $text-field-border;
+		@extend .divider;
 	}
 }
