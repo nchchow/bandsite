@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Xavier de Rosnay & Gaspard Augé</title>
-  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/shows.css">
 </head>
 
 <body>
@@ -31,7 +31,41 @@
     </nav>
   </header>
 
-  <h1>under construction....</h1>
+  <!-- FEATURED -->
+  <section class="site-featured">
+    <div class="container">
+      <!-- featured album -->
+      <h6 class="site-featured__album">Woman Worldwide Album</h6>
+      <!-- featured song -->
+      <h1 class="site-featured__song">Waters of Nazareth x We Are your Friends x Phantom</h1>
+
+      <!-- embedded soundcloud -->
+      <iframe class="site-featured__iframe" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/535872399&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+      <div
+        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-weight: 100;">
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWS LIST -->
+  <section class="shows">
+    <div class="container">
+      <h2 class="shows__title">Shows</h2>
+      <!-- list -->
+      <section class="shows__list">
+        <!-- js inserted list -->
+        <!-- template shows item -->
+        <article class="show">
+          <span class="show__date">Mon Dec 17 2018</span>
+          <span class="show__venue">Ronald Lane</span>
+          <span class="show__location">San Francisco, CA</span>
+          <button class="show__buy-button">Buy Tickets</button>
+        </article>
+        <hr class="shows__list__divider">
+      </section>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="main-footer">

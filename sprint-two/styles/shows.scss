@@ -1,0 +1,67 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/fonts";
+@import "./partials/reset";
+@import "./partials/base";
+@import "./partials/util";
+@import "./partials/header";
+@import "./partials/featured";
+
+// SHOWS LIST
+.shows {
+	&__title {
+		margin: 32px 0 72px;
+	}
+
+	&__list {
+		.show {
+			display: flex;
+			flex-direction: column;
+			&__date {
+				margin-bottom: 60px;
+				position: relative;
+				&:before {
+					content: "DATE";
+					position: absolute;
+					top: -2rem;
+					color: $text-label-style;
+					font-size: 0.75rem;
+				}
+			}
+
+			&__venue {
+				position: relative;
+				margin-bottom: 60px;
+				&:before {
+					content: "VENUE";
+					position: absolute;
+					top: -2rem;
+					color: $text-label-style;
+					font-size: 0.75rem;
+				}
+			}
+
+			&__location {
+				position: relative;
+				&:before {
+					content: "LOCATION";
+					position: absolute;
+					top: -2rem;
+					color: $text-label-style;
+					font-size: 0.75rem;
+				}
+			}
+
+			&__buy-button {
+				@extend .button;
+				margin: 32px 0 16px;
+			}
+		}
+		&__divider {
+			@extend .divider;
+			margin-bottom: 32px;
+		}
+	}
+}
+
+@import "./partials/footer";
