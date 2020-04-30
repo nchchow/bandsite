@@ -33,20 +33,21 @@ newCommentForm.addEventListener("submit", (e) => {
 	// construct a new comment and push to comments array
 	comments.push(newComment(e.target));
 	// clear all comments on screen
-	removePageComments();
+	commentsList.innerHTML = "";
 	// render comments
 	render(comments);
 	// clear input fields
-	clearInputs(e.target);
+	e.target.reset();
 });
 
-// run script
+// render comments on load
 render(comments);
 
 // renders comments to screen in reverse chrono order
 function render(comments) {
 	for (let i = comments.length - 1; i >= 0; i--) {
-		commentsList.append(displayComment(comments[i]), divider());
+		const [comment, divider] = displayComment(comments[i]);
+		commentsList.append(comment, divider);
 	}
 }
 
@@ -65,14 +66,8 @@ function displayComment(comment) {
 	const commentElem = classElement("comment", "article");
 	commentElem.append(userIcon, textWrapper(comment));
 
-	return commentElem;
-}
-
-// construct line divider between comments and returns it
-function divider() {
 	const dividerElem = classElement("divider", "hr");
-
-	return dividerElem;
+	return [commentElem, dividerElem];
 }
 
 // constructs text wrapper for comments and returns it
@@ -104,9 +99,9 @@ function textWrapperTop(comment) {
 /*
 	FORM FUNCTIONS
  */
-
 // get current date string in mm/dd/yyyy
 function getFormattedDate() {
+	// todo padd with 0 if single digit
 	const date = new Date();
 	const m = date.getMonth() + 1;
 	const d = date.getDate();
@@ -123,29 +118,30 @@ function newComment(target) {
 	};
 }
 
-// removes all comments and dividers on page
-function removePageComments() {
-	commentsList.innerHTML = "";
-	// let elems = commentsList.childNodes;
-	// console.log(elems);
-	// for (e of elems) {
-	// 	console.log(e);
-	// 	commentsList.removeChild(e);
-	// }
+// // removes all comments and dividers on page
+// function removePageComments() {
+// 	commentsList.innerHTML = "";
+// 	// let elems = commentsList.children;
+// 	// console.log(elems);
+// 	// for (e of elems) {
+// 	// 	console.log(e);
+// 	// 	commentsList.removeChild(e);
+// 	// }
 
-	// const commentElems = document.querySelectorAll(".comment");
-	// const dividers = document.querySelectorAll(".divider");
-	// commentElems.forEach((comment) => {
-	// 	commentsList.removeChild(comment);
-	// });
-	// // remove all except first divider
-	// for (let i = 1; i < dividers.length; i++) {
-	// 	commentsList.removeChild(dividers[i]);
-	// }
-}
+// 	// const commentElems = document.querySelectorAll(".comment");
+// 	// const dividers = document.querySelectorAll(".divider");
+// 	// commentElems.forEach((comment) => {
+// 	// 	commentsList.removeChild(comment);
+// 	// });
+// 	// // remove all except first divider
+// 	// for (let i = 1; i < dividers.length; i++) {
+// 	// 	commentsList.removeChild(dividers[i]);
+// 	// }
+// }
 
-// clear input fields
-function clearInputs(target) {
-	target.name.value = "";
-	target.content.value = "";
-}
+// // clear input fields
+// function clearInputs(target) {
+// 	// target.name.value = "";
+// 	// target.content.value = "";
+// 	target.reset();
+// }
