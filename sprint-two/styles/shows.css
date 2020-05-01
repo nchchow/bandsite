@@ -199,6 +199,10 @@ body {
   background: #000;
 }
 
+.button:focus, .shows__list .show__buy-button:focus {
+  outline: none;
+}
+
 @media screen and (min-width: 720px) {
   .button, .shows__list .show__buy-button {
     max-width: 160px;

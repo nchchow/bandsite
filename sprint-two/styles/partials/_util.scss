@@ -121,6 +121,9 @@
 	&:hover {
 		background: #000;
 	}
+	&:focus {
+		outline: none;
+	}
 
 	@include tablet() {
 		max-width: 160px;

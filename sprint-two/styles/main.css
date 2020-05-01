@@ -199,6 +199,10 @@ body {
   background: #000;
 }
 
+.button:focus, .comments .new-comment__button:focus {
+  outline: none;
+}
+
 @media screen and (min-width: 720px) {
   .button, .comments .new-comment__button {
     max-width: 160px;
