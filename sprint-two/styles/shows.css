@@ -414,8 +414,15 @@ body {
   }
 }
 
+@media screen and (min-width: 720px) {
+  .shows {
+    margin-bottom: 24px;
+  }
+}
+
 @media screen and (min-width: 1080px) {
   .shows {
+    margin-bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -432,7 +439,7 @@ body {
 
 @media screen and (min-width: 1080px) {
   .shows__title {
-    margin: 48px 0;
+    margin: 48px 12px 0;
   }
 }
 

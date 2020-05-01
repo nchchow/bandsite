@@ -1,14 +1,19 @@
 // SHOWS LIST
 .shows {
+	@include tablet() {
+		margin-bottom: 24px;
+	}
 	@include desktop() {
+		margin-bottom: 0;
 		display: flex;
 		justify-content: space-between;
 	}
+
 	&__title {
 		margin: 32px 0 40px;
 		font-family: $font-bold;
 		@include desktop() {
-			margin: 48px 0;
+			margin: 48px 12px 0;
 		}
 	}
 
@@ -26,6 +31,7 @@
 				grid-template-columns: 224px 148px 124px auto;
 				grid-template-rows: 64px;
 				align-items: center;
+				// hide table headers in greater than mobile sizes
 				&:not(:first-child) {
 					.show__date {
 						&::before {
@@ -45,7 +51,6 @@
 				}
 			}
 			@include desktop() {
-				// 276 | 184 | 184 | auto
 				grid-template-columns: 276px 184px 184px 160px;
 			}
 
