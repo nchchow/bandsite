@@ -58,10 +58,9 @@ function textWrapper(comment) {
 
 	const dateElem = elementWithClass("span", "comment__date");
 
-	const toggle = toggleDate(comment); // handler
-
 	// if date elem clicked, toggle time display for all comments
-	dateElem.addEventListener("click", toggle);
+	const toggleHandler = toggleDate(comment);
+	dateElem.addEventListener("click", toggleHandler);
 
 	// display time passed since posted date
 	[diff, unit] = dateDifference(new Date(), comment.datePosted);
