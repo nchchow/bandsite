@@ -16,13 +16,13 @@ function formHandler(e) {
 	const name = e.target.name.value;
 	const content = e.target.content.value;
 	if (name !== "" && content !== "") {
-		comments.push({
+		commentsData.push({
 			userName: name,
 			datePosted: new Date(),
 			content: content,
 		});
 		commentsList.innerHTML = ""; // clear all comments on screen
-		render(comments); // render comments
+		render(commentsData); // render comments
 		e.target.reset(); // clear input fields
 	} else {
 		alert("Please add name and/or comment");
@@ -31,15 +31,15 @@ function formHandler(e) {
 
 // returns a handler that toggles comment's date format
 const toggleDate = (comment) => {
-	let toggled = true; // private value
+	let toggled = false; // private value
 	return function () {
 		if (toggled) {
-			// display posted date
-			this.textContent = getShortDate(comment.datePosted);
-		} else {
 			// display time passed since posted date
 			[diff, unit] = dateDifference(new Date(), comment.datePosted);
-			this.textContent = formatDateDiff([diff, unit]);
+			this.textContent = formatDateDiff(diff, unit);
+		} else {
+			// display posted date
+			this.textContent = getShortDate(comment.datePosted);
 		}
 		toggled = !toggled;
 	};
@@ -61,7 +61,7 @@ function textWrapper(comment) {
 
 	// display time passed since posted date
 	[diff, unit] = dateDifference(new Date(), comment.datePosted);
-	dateElem.textContent = formatDateDiff([diff, unit]);
+	dateElem.textContent = formatDateDiff(diff, unit);
 
 	const commentElem = elementWithClass("p", "comment__content");
 	commentElem.textContent = comment.content;
@@ -99,5 +99,5 @@ function render(comments) {
 // render comments on load
 // IIFE
 (function init() {
-	render(comments);
+	render(commentsData);
 })();

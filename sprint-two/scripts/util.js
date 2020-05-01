@@ -12,10 +12,7 @@ function elementWithClass(elementStr, ...classStrs) {
 */
 // pad 0 for single digits
 function padZero(val) {
-	if (val < 10) {
-		return "0" + val;
-	}
-	return val;
+	return val < 9 ? "0" + val : val;
 }
 
 // get date string in mm/dd/yyyy
@@ -50,7 +47,7 @@ function getLongDate(date) {
 	return `${e} ${m} ${d} ${y}`;
 }
 
-// return array containing the date difference and the largest appropriate unit as string
+// return array containing a rough date difference and the largest appropriate unit as string
 function dateDifference(dt1, dt2) {
 	const ms = dt1 - dt2; // in milliseconds
 	const min = ms / 1000 / 60;
@@ -66,7 +63,7 @@ function dateDifference(dt1, dt2) {
 }
 
 // take date difference and unit, then format to string
-function formatDateDiff([diff, unit]) {
-	if (diff > 1) unit += "s"; // plural
+function formatDateDiff(diff, unit) {
+	if (diff !== 1) unit += "s"; // plural
 	return `${diff} ${unit} ago`;
 }
