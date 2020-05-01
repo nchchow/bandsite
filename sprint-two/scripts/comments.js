@@ -17,7 +17,7 @@ function formHandler(e) {
 	if (name !== "" && content !== "") {
 		comments.push({
 			userName: name,
-			datePosted: getFormattedDate(),
+			datePosted: new Date(),
 			content: content,
 		});
 		commentsList.innerHTML = ""; // clear all comments on screen
@@ -28,18 +28,28 @@ function formHandler(e) {
 	}
 }
 
-// renders comments to screen in reverse chrono order
-function render(comments) {
-	// TODO: once comments are sorted, use foreach
-	for (let i = comments.length - 1; i >= 0; i--) {
-		const [comment, divider] = displayComment(comments[i]);
-		commentsList.append(comment, divider);
-	}
-}
-
 /* 
 COMMENT CONSTRUCTOR FUNCTIONS 
 */
+// constructs text wrapper for comments and returns it
+function textWrapper(comment) {
+	const nameElem = elementWithClass("span", "comment__name");
+	nameElem.textContent = comment.userName;
+
+	const dateElem = elementWithClass("span", "comment__date");
+
+	[diff, unit] = dateDifference(new Date(), comment.datePosted);
+	dateElem.textContent = `${diff} ${unit} ago`;
+
+	const commentElem = elementWithClass("p", "comment__content");
+	commentElem.textContent = comment.content;
+
+	const textWrapper = elementWithClass("div", "comment__text-wrapper");
+	textWrapper.append(nameElem, dateElem, commentElem);
+
+	return textWrapper;
+}
+
 // contructs comment elem and comment divider and returns them
 function displayComment(comment) {
 	const userIcon = elementWithClass("div", "comment__user-icon");
@@ -51,21 +61,13 @@ function displayComment(comment) {
 	return [commentElem, dividerElem];
 }
 
-// constructs text wrapper for comments and returns it
-function textWrapper(comment) {
-	const nameElem = elementWithClass("span", "comment__name");
-	nameElem.textContent = comment.userName;
-
-	const dateElem = elementWithClass("span", "comment__date");
-	dateElem.textContent = comment.datePosted;
-
-	const commentElem = elementWithClass("p", "comment__content");
-	commentElem.textContent = comment.content;
-
-	const textWrapper = elementWithClass("div", "comment__text-wrapper");
-	textWrapper.append(nameElem, dateElem, commentElem);
-
-	return textWrapper;
+// renders comments to screen in reverse chrono order
+function render(comments) {
+	// TODO: once comments are sorted, use foreach
+	for (let i = comments.length - 1; i >= 0; i--) {
+		const [comment, divider] = displayComment(comments[i]);
+		commentsList.append(comment, divider);
+	}
 }
 
 // render comments on load
