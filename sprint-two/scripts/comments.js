@@ -35,10 +35,10 @@ const toggleDate = (comment) => {
 	let toggled = true;
 	return function () {
 		if (toggled) {
-			// if clicked odd number of times, display posted date
+			// display posted date
 			this.textContent = getFormattedDate(comment.datePosted);
 		} else {
-			// even, display time since posted date
+			// display time passed since posted date
 			[diff, unit] = dateDifference(new Date(), comment.datePosted);
 			this.textContent = `${diff} ${unit} ago`;
 		}
@@ -56,7 +56,7 @@ function textWrapper(comment) {
 
 	const dateElem = elementWithClass("span", "comment__date");
 
-	// if date elem clicked, toggle time display for all comments
+	// if date elem clicked, toggle time display for the comment
 	const toggleHandler = toggleDate(comment);
 	dateElem.addEventListener("click", toggleHandler);
 
