@@ -8,6 +8,7 @@ const newCommentForm = document.querySelector(".new-comment__form");
 // event listeners
 newCommentForm.addEventListener("submit", formHandler);
 
+// handlers
 function formHandler(e) {
 	// prevent page refresh
 	e.preventDefault();
@@ -38,6 +39,26 @@ function textWrapper(comment) {
 
 	const dateElem = elementWithClass("span", "comment__date");
 
+	let counter = 0;
+	// if date elem clicked, toggle time display for all comments
+	dateElem.addEventListener("click", () => {
+		const displays = document.querySelectorAll(".comment__date");
+		displays.forEach((display) => {
+			if (counter % 2 === 0) {
+				// if clicked odd number of times, display posted date
+				display.textContent = getFormattedDate(comment.datePosted);
+			} else {
+				// even, display time since posted date
+				[diff, unit] = dateDifference(new Date(), comment.datePosted);
+				display.textContent = `${diff} ${unit} ago`;
+			}
+		});
+		counter++;
+	});
+	// display posted date
+	dateElem.textContent = getFormattedDate(comment.datePosted);
+
+	// display time passed since posted date
 	[diff, unit] = dateDifference(new Date(), comment.datePosted);
 	dateElem.textContent = `${diff} ${unit} ago`;
 
