@@ -64,3 +64,9 @@ function dateDifference(dt1, dt2) {
 	const y = month / 12;
 	return [Math.floor(y), "year"];
 }
+
+// take date difference and unit, then format to string
+function formatDateDiff([diff, unit]) {
+	if (diff > 1) unit += "s"; // plural
+	return `${diff} ${unit} ago`;
+}

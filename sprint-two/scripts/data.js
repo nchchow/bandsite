@@ -1,7 +1,7 @@
 const comments = [
 	{
 		userName: "Theodore Duncan",
-		datePosted: new Date(2018, 10, 15),
+		datePosted: new Date(2013, 10, 15),
 		content:
 			"How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
 	},

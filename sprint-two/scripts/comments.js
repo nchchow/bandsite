@@ -31,8 +31,7 @@ function formHandler(e) {
 
 // returns a handler that toggles comment's date format
 const toggleDate = (comment) => {
-	console.log(comment);
-	let toggled = true;
+	let toggled = true; // private value
 	return function () {
 		if (toggled) {
 			// display posted date
@@ -40,7 +39,7 @@ const toggleDate = (comment) => {
 		} else {
 			// display time passed since posted date
 			[diff, unit] = dateDifference(new Date(), comment.datePosted);
-			this.textContent = `${diff} ${unit} ago`;
+			this.textContent = formatDateDiff([diff, unit]);
 		}
 		toggled = !toggled;
 	};
@@ -62,7 +61,7 @@ function textWrapper(comment) {
 
 	// display time passed since posted date
 	[diff, unit] = dateDifference(new Date(), comment.datePosted);
-	dateElem.textContent = `${diff} ${unit} ago`;
+	dateElem.textContent = formatDateDiff([diff, unit]);
 
 	const commentElem = elementWithClass("p", "comment__content");
 	commentElem.textContent = comment.content;
@@ -85,13 +84,13 @@ function displayComment(comment) {
 }
 
 // returns new array of comments sorted by date in reverse chrono order
-function dateSortedComments(comments) {
+function dateSortComments(comments) {
 	return comments.slice().sort((a, b) => b.datePosted - a.datePosted);
 }
 
 // renders comments to screen in reverse chrono order
 function render(comments) {
-	const sorted = dateSortedComments(comments);
+	const sorted = dateSortComments(comments);
 	sorted.forEach((comment) => {
 		displayComment(comment);
 	});
