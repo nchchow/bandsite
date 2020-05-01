@@ -31,20 +31,18 @@ function formHandler(e) {
 
 // returns a handler that toggles comments date format
 const toggleDate = (comment) => {
-	let counter = 0;
-	return () => {
-		const displays = document.querySelectorAll(".comment__date");
-		displays.forEach((display) => {
-			if (counter % 2 === 0) {
-				// if clicked odd number of times, display posted date
-				display.textContent = getFormattedDate(comment.datePosted);
-			} else {
-				// even, display time since posted date
-				[diff, unit] = dateDifference(new Date(), comment.datePosted);
-				display.textContent = `${diff} ${unit} ago`;
-			}
-		});
-		counter++;
+	console.log(comment);
+	let toggled = true;
+	return function () {
+		if (toggled) {
+			// if clicked odd number of times, display posted date
+			this.textContent = getFormattedDate(comment.datePosted);
+		} else {
+			// even, display time since posted date
+			[diff, unit] = dateDifference(new Date(), comment.datePosted);
+			this.textContent = `${diff} ${unit} ago`;
+		}
+		toggled = !toggled;
 	};
 };
 
