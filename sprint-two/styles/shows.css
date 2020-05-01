@@ -455,16 +455,15 @@ body {
 
 @media screen and (min-width: 720px) {
   .shows__list .show {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 224px 148px 124px auto;
+        grid-template-columns: 224px 148px 124px auto;
+    -ms-grid-rows: 64px;
+        grid-template-rows: 64px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .shows__list .show:not(:first-child) .show__date::before {
     display: none;
@@ -474,6 +473,13 @@ body {
   }
   .shows__list .show:not(:first-child) .show__location::before {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .shows__list .show {
+    -ms-grid-columns: 276px 184px 184px 160px;
+        grid-template-columns: 276px 184px 184px 160px;
   }
 }
 
@@ -555,7 +561,8 @@ body {
 
 @media screen and (min-width: 720px) {
   .shows__list .show__buy-button {
-    margin: 0 0 16px;
+    margin: 0;
+    justify-self: flex-end;
   }
 }
 
@@ -565,7 +572,7 @@ body {
 
 @media screen and (min-width: 720px) {
   .shows__list__divider {
-    margin-bottom: 16px;
+    margin-bottom: 0;
   }
 }
 

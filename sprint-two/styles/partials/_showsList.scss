@@ -22,9 +22,10 @@
 			display: flex;
 			flex-direction: column;
 			@include tablet() {
-				flex-direction: row;
-				justify-content: space-between;
-				align-items: baseline;
+				display: grid;
+				grid-template-columns: 224px 148px 124px auto;
+				grid-template-rows: 64px;
+				align-items: center;
 				&:not(:first-child) {
 					.show__date {
 						&::before {
@@ -42,6 +43,10 @@
 						}
 					}
 				}
+			}
+			@include desktop() {
+				// 276 | 184 | 184 | auto
+				grid-template-columns: 276px 184px 184px 160px;
 			}
 
 			&__date {
@@ -87,7 +92,8 @@
 				@extend .button;
 				margin: 32px 0 16px;
 				@include tablet() {
-					margin: 0 0 16px;
+					margin: 0;
+					justify-self: flex-end;
 				}
 			}
 		}
@@ -95,7 +101,7 @@
 			@extend .divider;
 			margin-bottom: 32px;
 			@include tablet() {
-				margin-bottom: 16px;
+				margin-bottom: 0;
 			}
 		}
 	}
