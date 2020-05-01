@@ -110,7 +110,7 @@
 				right: 0;
 				font-size: 0.9rem;
 				color: $text-label-style;
-				user-select: none;
+				user-select: none; // makes text unselectable for smoother toggling experience
 				@include tablet() {
 					margin-left: 12px;
 					position: static;
