@@ -39,22 +39,29 @@ function textWrapper(comment) {
 
 	const dateElem = elementWithClass("span", "comment__date");
 
-	let counter = 0;
+	let toggleDate = () => {
+		let counter = 0;
+		return function displayDate() {
+			const displays = document.querySelectorAll(".comment__date");
+			displays.forEach((display) => {
+				if (counter % 2 === 0) {
+					// if clicked odd number of times, display posted date
+					display.textContent = getFormattedDate(comment.datePosted);
+				} else {
+					// even, display time since posted date
+					[diff, unit] = dateDifference(new Date(), comment.datePosted);
+					display.textContent = `${diff} ${unit} ago`;
+				}
+			});
+			counter++;
+		};
+	};
+
+	let toggle = toggleDate();
+
 	// if date elem clicked, toggle time display for all comments
-	dateElem.addEventListener("click", () => {
-		const displays = document.querySelectorAll(".comment__date");
-		displays.forEach((display) => {
-			if (counter % 2 === 0) {
-				// if clicked odd number of times, display posted date
-				display.textContent = getFormattedDate(comment.datePosted);
-			} else {
-				// even, display time since posted date
-				[diff, unit] = dateDifference(new Date(), comment.datePosted);
-				display.textContent = `${diff} ${unit} ago`;
-			}
-		});
-		counter++;
-	});
+	dateElem.addEventListener("click", toggle);
+
 	// display posted date
 	dateElem.textContent = getFormattedDate(comment.datePosted);
 
