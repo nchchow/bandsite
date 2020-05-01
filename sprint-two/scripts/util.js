@@ -16,15 +16,15 @@ function getFormattedDate(date) {
 
 // return date differences and the largest appropriate unit string
 function dateDifference(dt1, dt2) {
-	let ms = dt1 - dt2; // in milliseconds
-	let min = ms / 1000 / 60;
+	const ms = dt1 - dt2; // in milliseconds
+	const min = ms / 1000 / 60;
 	if (min < 60) return [Math.floor(min), "min"];
-	let h = min / 60;
+	const h = min / 60;
 	if (h < 24) return [Math.floor(h), "hour"];
-	let d = h / 24;
+	const d = h / 24;
 	if (d < 30) return [Math.floor(d), "day"];
-	let month = d / 30;
+	const month = d / 30;
 	if (month < 12) return [Math.floor(month), "month"];
-	let y = month / 12;
+	const y = month / 12;
 	return [Math.floor(y), "year"];
 }
