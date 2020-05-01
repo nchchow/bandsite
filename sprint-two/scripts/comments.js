@@ -29,7 +29,7 @@ function formHandler(e) {
 	}
 }
 
-// returns a handler that toggles comments date format
+// returns a handler that toggles comment's date format
 const toggleDate = (comment) => {
 	console.log(comment);
 	let toggled = true;
@@ -51,7 +51,7 @@ COMMENT CONSTRUCTOR FUNCTIONS
 */
 // constructs text wrapper for comments and returns it
 function textWrapper(comment) {
-	const nameElem = elementWithClass("span", "comment__name");
+	const nameElem = elementWithClass("span", "comment__name"); // creates element and add class
 	nameElem.textContent = comment.userName;
 
 	const dateElem = elementWithClass("span", "comment__date");
@@ -73,7 +73,7 @@ function textWrapper(comment) {
 	return textWrapper;
 }
 
-// contructs comment elem and comment divider and returns them
+// contructs comment elem and comment divider and appends them to comments list
 function displayComment(comment) {
 	const userIcon = elementWithClass("div", "comment__user-icon");
 
@@ -81,16 +81,20 @@ function displayComment(comment) {
 	commentElem.append(userIcon, textWrapper(comment));
 
 	const dividerElem = elementWithClass("hr", "comments__divider");
-	return [commentElem, dividerElem];
+	commentsList.append(commentElem, dividerElem);
+}
+
+// returns new array of comments sorted by date in reverse chrono order
+function dateSortedComments(comments) {
+	return comments.slice().sort((a, b) => b.datePosted - a.datePosted);
 }
 
 // renders comments to screen in reverse chrono order
 function render(comments) {
-	// TODO: once comments are sorted, use foreach
-	for (let i = comments.length - 1; i >= 0; i--) {
-		const [comment, divider] = displayComment(comments[i]);
-		commentsList.append(comment, divider);
-	}
+	const sorted = dateSortedComments(comments);
+	sorted.forEach((comment) => {
+		displayComment(comment);
+	});
 }
 
 // render comments on load

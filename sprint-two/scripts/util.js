@@ -1,7 +1,9 @@
-// helper function to create element and add class, returns the element
-function elementWithClass(elementStr, classStr) {
+// helper function to create element and add class(es), returns the element
+function elementWithClass(elementStr, ...classStrs) {
 	const elem = document.createElement(elementStr);
-	elem.classList.add(classStr);
+	classStrs.forEach((classStr) => {
+		elem.classList.add(classStr);
+	});
 	return elem;
 }
 
