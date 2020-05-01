@@ -20,7 +20,7 @@ function formHandler(e) {
 			datePosted: getFormattedDate(),
 			content: content,
 		});
-		clearComments(); // clear all comments on screen
+		commentsList.innerHTML = ""; // clear all comments on screen
 		render(comments); // render comments
 		e.target.reset(); // clear input fields
 	} else {
@@ -68,31 +68,8 @@ function textWrapper(comment) {
 	return textWrapper;
 }
 
-// removes all comments and dividers on page
-function clearComments() {
-	while (commentsList.lastChild) {
-		commentsList.removeChild(commentsList.lastChild);
-	}
-
-	// let elems = commentsList.children;
-	// console.log(elems);
-	// for (e of elems) {
-	// 	console.log(e);
-	// 	commentsList.removeChild(e);
-	// }
-
-	// const commentElems = document.querySelectorAll(".comment");
-	// const dividers = document.querySelectorAll(".divider");
-	// commentElems.forEach((comment) => {
-	// 	commentsList.removeChild(comment);
-	// });
-	// // remove all except first divider
-	// for (let i = 1; i < dividers.length; i++) {
-	// 	commentsList.removeChild(dividers[i]);
-	// }
-}
-
 // render comments on load
+// IIFE
 (function init() {
 	render(comments);
 })();
