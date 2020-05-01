@@ -5,12 +5,19 @@ function elementWithClass(elementStr, classStr) {
 	return elem;
 }
 
+function padZero(val) {
+	if (val < 10) {
+		return "0" + val;
+	}
+	return val;
+}
+
 // get current date string in mm/dd/yyyy
 function getFormattedDate(date) {
 	// todo padd with 0 if single digit
-	const m = date.getMonth() + 1;
-	const d = date.getDate();
-	const y = date.getFullYear();
+	const m = padZero(date.getMonth() + 1);
+	const d = padZero(date.getDate());
+	const y = padZero(date.getFullYear());
 	return `${m}/${d}/${y}`;
 }
 
