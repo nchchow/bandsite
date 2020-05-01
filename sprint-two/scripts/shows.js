@@ -12,7 +12,7 @@ function render(showsData) {
 function displayShow(show) {
 	const showElem = elementWithClass("article", "show");
 	const dateElem = elementWithClass("span", "show__date");
-	dateElem.textContent = show.date;
+	dateElem.textContent = getLongDate(show.date);
 	const venueElem = elementWithClass("span", "show__venue");
 	venueElem.textContent = show.venue;
 	const locationElem = elementWithClass("span", "show__location");

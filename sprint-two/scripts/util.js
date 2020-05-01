@@ -5,6 +5,10 @@ function elementWithClass(elementStr, classStr) {
 	return elem;
 }
 
+/*
+	DATE FUNCTIONS
+*/
+// pad 0 for single digits
 function padZero(val) {
 	if (val < 10) {
 		return "0" + val;
@@ -12,16 +16,39 @@ function padZero(val) {
 	return val;
 }
 
-// get current date string in mm/dd/yyyy
-function getFormattedDate(date) {
-	// todo padd with 0 if single digit
+// get date string in mm/dd/yyyy
+function getShortDate(date) {
 	const m = padZero(date.getMonth() + 1);
 	const d = padZero(date.getDate());
-	const y = padZero(date.getFullYear());
+	const y = date.getFullYear();
 	return `${m}/${d}/${y}`;
 }
 
-// return date differences and the largest appropriate unit string
+// get date string in eee mmm dd yyyy
+function getLongDate(date) {
+	const months = [
+		"Jan",
+		"Feb",
+		"Mar",
+		"Apr",
+		"May",
+		"Jun",
+		"Jul",
+		"Aug",
+		"Sep",
+		"Oct",
+		"Nov",
+		"Dec",
+	];
+	const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+	const e = daysOfWeek[date.getDay()];
+	const m = months[date.getMonth()];
+	const d = padZero(date.getDate());
+	const y = date.getFullYear();
+	return `${e} ${m} ${d} ${y}`;
+}
+
+// return array containing the date difference and the largest appropriate unit as string
 function dateDifference(dt1, dt2) {
 	const ms = dt1 - dt2; // in milliseconds
 	const min = ms / 1000 / 60;

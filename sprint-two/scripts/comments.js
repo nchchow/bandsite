@@ -36,7 +36,7 @@ const toggleDate = (comment) => {
 	return function () {
 		if (toggled) {
 			// display posted date
-			this.textContent = getFormattedDate(comment.datePosted);
+			this.textContent = getShortDate(comment.datePosted);
 		} else {
 			// display time passed since posted date
 			[diff, unit] = dateDifference(new Date(), comment.datePosted);

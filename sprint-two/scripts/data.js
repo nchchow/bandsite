@@ -21,32 +21,32 @@ const comments = [
 
 const showsData = [
 	{
-		date: "Mon Dec 17 2018",
+		date: new Date(2018, 11, 17),
 		venue: "Ronald Lane",
 		location: "San Francisco, CA",
 	},
 	{
-		date: "Tue Jul 18 2019",
+		date: new Date(2019, 6, 18),
 		venue: "Pier 3 East",
 		location: "San Francisco, CA",
 	},
 	{
-		date: "Fri Jul 22 2019",
+		date: new Date(2019, 6, 22),
 		venue: "View Loungue",
 		location: "San Francisco, CA",
 	},
 	{
-		date: "Sat Aug 12 2019",
+		date: new Date(2019, 7, 12),
 		venue: "Hyatt Agency",
 		location: "San Francisco, CA",
 	},
 	{
-		date: "Fri Sep 05 2019",
+		date: new Date(2019, 8, 5),
 		venue: "Moscow Center",
 		location: "San Francisco, CA",
 	},
 	{
-		date: "Wed Aug 11 2019",
+		date: new Date(2019, 7, 11),
 		venue: "Pres Club",
 		location: "San Francisco, CA",
 	},
