@@ -110,6 +110,7 @@
 				right: 0;
 				font-size: 0.9rem;
 				color: $text-label-style;
+				user-select: none;
 				@include tablet() {
 					margin-left: 12px;
 					position: static;

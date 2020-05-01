@@ -702,6 +702,10 @@ body {
   right: 0;
   font-size: 0.9rem;
   color: #afafaf;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 @media screen and (min-width: 720px) {
