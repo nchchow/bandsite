@@ -1,14 +1,10 @@
+/**
+ * TAKES SHOWS, BUILDS HTML COMPONENTS AND LISTS THEM ON THE SCREEN
+ */
 // DOM elements
 const showsListElem = document.querySelector(".shows__list");
 
-function render(SHOWS_DATA) {
-	SHOWS_DATA.forEach((showData) => {
-		const [show, divider] = displayShow(showData);
-		showsListElem.append(show, divider);
-	});
-}
-
-// construct each show element and divider and returns them
+// construct a show element and divider and appends them to shows list elem
 function displayShow(show) {
 	const showElem = elementWithClass("article", "show");
 	const dateElem = elementWithClass("span", "show__date");
@@ -21,9 +17,9 @@ function displayShow(show) {
 	buttonElem.textContent = "BUY TICKETS";
 	showElem.append(dateElem, venueElem, locationElem, buttonElem);
 	const dividerElem = elementWithClass("hr", "shows__list__divider");
-	return [showElem, dividerElem];
+	showsListElem.append(showElem, dividerElem);
 }
 
 (function init() {
-	render(SHOWS_DATA);
+	render(SHOWS_DATA, displayShow); // see util.js
 })();

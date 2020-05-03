@@ -22,7 +22,7 @@ function formHandler(e) {
 			content: content,
 		});
 		commentsList.innerHTML = ""; // clear all comments on screen
-		render(COMMENTS_DATA); // render comments
+		render(dateSortComments(COMMENTS_DATA), displayComment); // render comments
 		e.target.reset(); // clear input fields
 	} else {
 		alert("Please add name and/or comment");
@@ -88,16 +88,8 @@ function dateSortComments(comments) {
 	return comments.slice().sort((a, b) => b.datePosted - a.datePosted);
 }
 
-// renders comments to screen in reverse chrono order
-function render(comments) {
-	const sorted = dateSortComments(comments);
-	sorted.forEach((comment) => {
-		displayComment(comment);
-	});
-}
-
 // render comments on load
 // IIFE
 (function init() {
-	render(COMMENTS_DATA);
+	render(dateSortComments(COMMENTS_DATA), displayComment); // see util.js
 })();
