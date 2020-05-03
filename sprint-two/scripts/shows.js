@@ -1,8 +1,8 @@
 // DOM elements
 const showsListElem = document.querySelector(".shows__list");
 
-function render(showsData) {
-	showsData.forEach((showData) => {
+function render(SHOWS_DATA) {
+	SHOWS_DATA.forEach((showData) => {
 		const [show, divider] = displayShow(showData);
 		showsListElem.append(show, divider);
 	});
@@ -25,5 +25,5 @@ function displayShow(show) {
 }
 
 (function init() {
-	render(showsData);
+	render(SHOWS_DATA);
 })();

@@ -1,4 +1,4 @@
-const commentsData = [
+const COMMENTS_DATA = [
 	{
 		userName: "Theodore Duncan",
 		datePosted: new Date(2018, 10, 15),
@@ -19,7 +19,7 @@ const commentsData = [
 	},
 ];
 
-const showsData = [
+const SHOWS_DATA = [
 	{
 		date: new Date(2018, 11, 17),
 		venue: "Ronald Lane",

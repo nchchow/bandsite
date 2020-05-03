@@ -16,13 +16,13 @@ function formHandler(e) {
 	const name = e.target.name.value;
 	const content = e.target.content.value;
 	if (name !== "" && content !== "") {
-		commentsData.push({
+		COMMENTS_DATA.push({
 			userName: name,
 			datePosted: new Date(),
 			content: content,
 		});
 		commentsList.innerHTML = ""; // clear all comments on screen
-		render(commentsData); // render comments
+		render(COMMENTS_DATA); // render comments
 		e.target.reset(); // clear input fields
 	} else {
 		alert("Please add name and/or comment");
@@ -99,5 +99,5 @@ function render(comments) {
 // render comments on load
 // IIFE
 (function init() {
-	render(commentsData);
+	render(COMMENTS_DATA);
 })();
