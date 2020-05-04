@@ -52,23 +52,27 @@ function getLongDate(date) {
 	return `${e} ${m} ${d} ${y}`;
 }
 
+// take date difference and unit, then format to string
+function formatDateDiff(diff, unit) {
+	if (diff !== 1) unit += "s"; // plural
+	return `${diff} ${unit} ago`;
+}
+
 // return array containing a rough date difference and the largest appropriate unit as string
 function dateDifference(dt1, dt2) {
 	const ms = dt1 - dt2; // in milliseconds
 	const min = ms / 1000 / 60;
 	if (min < 60) return [Math.floor(min), "min"];
+
 	const h = min / 60;
 	if (h < 24) return [Math.floor(h), "hour"];
+
 	const d = h / 24;
 	if (d < 30) return [Math.floor(d), "day"];
+
 	const month = d / 30;
 	if (month < 12) return [Math.floor(month), "month"];
-	const y = month / 12;
-	return [Math.floor(y), "year"];
-}
 
-// take date difference and unit, then format to string
-function formatDateDiff(diff, unit) {
-	if (diff !== 1) unit += "s"; // plural
-	return `${diff} ${unit} ago`;
+	const y = month / 12;
+	return formatDateDiff(Math.floor(y), "year");
 }
