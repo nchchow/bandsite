@@ -1,0 +1,130 @@
+// COMMENTS
+.comments {
+	padding: 32px 0 40px;
+
+	&__title {
+		margin: 0 0 40px;
+		font-family: $font-bold;
+		font-size: 1.5rem;
+	}
+
+	// new comment section
+	.new-comment {
+		display: flex;
+		padding-bottom: 32px;
+		width: 100%;
+
+		&__form {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			width: 70vw;
+		}
+
+		&__user-icon {
+			margin: 24px 19px 0 0;
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			object-fit: cover;
+			// todo: adjust position
+		}
+
+		&__name {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			&--label {
+				@include text-size-height(0.75rem, 1.25rem);
+				font-family: $font-demi;
+				color: $text-label-style;
+			}
+			&--input {
+				border: 1px solid $text-field-border;
+				padding-left: 14px;
+				@include text-size-height(0.9rem, 1.4rem);
+				height: 48px;
+				border-radius: 4px;
+				&:focus {
+					@include focused-input();
+				}
+			}
+		}
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			&--label {
+				margin-top: 16px;
+				@include text-size-height(0.75rem, 1.25rem);
+				font-family: $font-demi;
+				color: $text-label-style;
+			}
+			&--input {
+				border: 1px solid $text-field-border;
+				padding: 14px;
+				@include text-size-height(0.9rem, 1.4rem);
+				resize: none;
+				height: 96px;
+				border-radius: 4px;
+				&:focus {
+					@include focused-input();
+				}
+			}
+		}
+
+		&__button {
+			@extend .button;
+		}
+	}
+
+	// comment list
+	&__list {
+		.comment {
+			display: flex;
+			padding: 24px 0;
+
+			&__user-icon {
+				margin: 0 16px 0 0;
+				min-width: 40px;
+				height: 40px;
+				background: $text-label-style;
+				border-radius: 50%;
+			}
+
+			&__text-wrapper {
+				position: relative;
+				width: 100%;
+			}
+
+			&__name {
+				font-family: $font-demi;
+				font-size: 0.8rem;
+			}
+
+			&__date {
+				position: absolute;
+				right: 0;
+				font-size: 0.9rem;
+				color: $text-label-style;
+				user-select: none; // makes text unselectable for smoother toggling experience
+				@include tablet() {
+					margin-left: 12px;
+					position: static;
+				}
+			}
+
+			&__content {
+				margin: 16px 0 0;
+				@include text-size-height(0.9rem, 1.4rem);
+			}
+		}
+	}
+
+	&__divider {
+		@extend .divider;
+	}
+}

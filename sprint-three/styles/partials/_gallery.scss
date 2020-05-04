@@ -1,0 +1,50 @@
+// GALLERY
+.gallery {
+	padding: 24px 0;
+	background: $text-field-background-fill;
+	@include desktop() {
+		padding: 48px 0 40px;
+	}
+
+	&__title {
+		margin: 0 0 24px 0;
+		font-family: $font-bold;
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		@include tablet() {
+			@include text-size-height(2.25rem, 2.75rem);
+		}
+		@include desktop() {
+			margin: 0 0 64px 0;
+		}
+	}
+
+	.hover-border {
+		margin-bottom: 16px;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		line-height: 0; // prevents unwanted padding on bottom of image
+		transition: linear 0.15s;
+		&:hover {
+			box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		filter: grayscale(80%);
+		transition: ease-in-out 0.4s;
+		@include tablet() {
+			margin: 0;
+		}
+		@include desktop() {
+			margin: 0;
+		}
+		&:hover {
+			transform: scale(1.1);
+			filter: none;
+		}
+	}
+}

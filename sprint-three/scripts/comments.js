@@ -35,7 +35,8 @@ const toggleDate = (comment) => {
 	return function () {
 		if (toggled) {
 			// display time passed since posted date
-			this.textContent = dateDifference(new Date(), comment.datePosted);
+			[diff, unit] = dateDifference(new Date(), comment.datePosted);
+			this.textContent = formatDateDiff(diff, unit);
 		} else {
 			// display posted date
 			this.textContent = getShortDate(comment.datePosted);
@@ -59,7 +60,8 @@ function textWrapper(comment) {
 	dateElem.addEventListener("click", toggleHandler);
 
 	// display time passed since posted date
-	dateElem.textContent = dateDifference(new Date(), comment.datePosted);
+	[diff, unit] = dateDifference(new Date(), comment.datePosted);
+	dateElem.textContent = formatDateDiff(diff, unit);
 
 	const commentElem = elementWithClass("p", "comment__content");
 	commentElem.textContent = comment.content;

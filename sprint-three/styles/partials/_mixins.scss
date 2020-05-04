@@ -1,0 +1,38 @@
+// media queries
+@mixin tablet {
+	@media screen and (min-width: $tablet-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media screen and (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin large-desktop {
+	@media screen and (min-width: $large-desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin text-size-height($size, $height) {
+	font-size: $size;
+	line-height: $height;
+}
+
+@mixin focused-input() {
+	outline: none;
+	padding: 13px;
+	border: 2px solid $primary-CTA;
+}
+
+@mixin table-header-style() {
+	position: absolute;
+	top: -2rem;
+	color: $text-label-style;
+	font-family: $font-demi;
+	letter-spacing: 0.05rem;
+	@include text-size-height(0.75rem, 1.25rem);
+}

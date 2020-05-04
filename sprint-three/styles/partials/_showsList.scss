@@ -1,0 +1,113 @@
+// SHOWS LIST
+.shows {
+	@include tablet() {
+		margin-bottom: 24px;
+	}
+	@include desktop() {
+		margin-bottom: 0;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title {
+		margin: 32px 0 40px;
+		font-family: $font-bold;
+		@include desktop() {
+			margin: 48px 12px 0;
+		}
+	}
+
+	&__list {
+		@include desktop() {
+			margin: 48px 0 24px;
+			width: 804px;
+		}
+
+		.show {
+			display: flex;
+			flex-direction: column;
+			@include tablet() {
+				display: grid;
+				grid-template-columns: 224px 148px 124px auto;
+				grid-template-rows: 64px;
+				align-items: center;
+				// hide table headers in greater than mobile sizes
+				&:not(:first-child) {
+					.show__date {
+						&::before {
+							display: none;
+						}
+					}
+					.show__venue {
+						&::before {
+							display: none;
+						}
+					}
+					.show__location {
+						&::before {
+							display: none;
+						}
+					}
+				}
+			}
+			@include desktop() {
+				grid-template-columns: 276px 184px 184px 160px;
+			}
+
+			&__date {
+				margin: 40px 0 60px;
+				position: relative;
+				font-family: $font-demi;
+				@include text-size-height(0.85rem, 1.15rem);
+				@include tablet() {
+					margin: 0;
+				}
+				&::before {
+					content: "DATE";
+					@include table-header-style();
+					@include tablet() {
+						content: "DATES";
+					}
+				}
+			}
+
+			&__venue {
+				position: relative;
+				margin-bottom: 60px;
+				@include text-size-height(0.85rem, 1.15rem);
+				&::before {
+					content: "VENUE";
+					@include table-header-style();
+				}
+				@include tablet() {
+					margin-bottom: 0;
+				}
+			}
+
+			&__location {
+				position: relative;
+				@include text-size-height(0.85rem, 1.15rem);
+				&::before {
+					content: "LOCATION";
+					@include table-header-style();
+				}
+			}
+
+			&__buy-button {
+				@extend .button;
+				margin: 32px 0 16px;
+				@include tablet() {
+					margin: 0;
+					justify-self: flex-end;
+				}
+			}
+		}
+		&__divider {
+			@extend .divider;
+			margin-bottom: 32px;
+			@include tablet() {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
