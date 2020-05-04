@@ -8,9 +8,9 @@ const showsListElem = document.querySelector(".shows__list");
 function displayShow(show) {
 	const showElem = elementWithClass("article", "show");
 	const dateElem = elementWithClass("span", "show__date");
-	dateElem.textContent = getLongDate(show.date);
+	dateElem.textContent = show.date;
 	const venueElem = elementWithClass("span", "show__venue");
-	venueElem.textContent = show.venue;
+	venueElem.textContent = show.place;
 	const locationElem = elementWithClass("span", "show__location");
 	locationElem.textContent = show.location;
 	const buttonElem = elementWithClass("button", "show__buy-button");
@@ -21,5 +21,5 @@ function displayShow(show) {
 }
 
 (function init() {
-	render(SHOWS_DATA, displayShow); // see util.js
+	populateData("showdates", SHOWS_DATA, displayShow);
 })();

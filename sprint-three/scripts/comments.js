@@ -14,12 +14,12 @@ function formHandler(e) {
 	e.preventDefault();
 	// construct a new comment and push to comments array
 	const name = e.target.name.value;
-	const content = e.target.content.value;
-	if (name !== "" && content !== "") {
+	const comment = e.target.content.value;
+	if (name !== "" && comment !== "") {
 		COMMENTS_DATA.push({
-			userName: name,
-			datePosted: new Date(),
-			content: content,
+			name: name,
+			timestamp: new Date().getTime(),
+			comment: comment,
 		});
 		commentsList.innerHTML = ""; // clear all comments on screen
 		render(dateSortComments(COMMENTS_DATA), displayComment); // render comments
@@ -35,10 +35,13 @@ const toggleDate = (comment) => {
 	return function () {
 		if (toggled) {
 			// display time passed since posted date
-			this.textContent = dateDifference(new Date(), comment.datePosted);
+			this.textContent = dateDifference(
+				new Date().getTime(),
+				comment.timestamp
+			);
 		} else {
 			// display posted date
-			this.textContent = getShortDate(comment.datePosted);
+			this.textContent = getShortDate(comment.timestamp);
 		}
 		toggled = !toggled;
 	};
@@ -50,7 +53,7 @@ COMMENT CONSTRUCTOR FUNCTIONS
 // constructs text wrapper for comments and returns it
 function textWrapper(comment) {
 	const nameElem = elementWithClass("span", "comment__name"); // creates element and add class
-	nameElem.textContent = comment.userName;
+	nameElem.textContent = comment.name;
 
 	const dateElem = elementWithClass("span", "comment__date");
 
@@ -59,10 +62,13 @@ function textWrapper(comment) {
 	dateElem.addEventListener("click", toggleHandler);
 
 	// display time passed since posted date
-	dateElem.textContent = dateDifference(new Date(), comment.datePosted);
+	dateElem.textContent = dateDifference(
+		new Date().getTime(),
+		comment.timestamp
+	);
 
 	const commentElem = elementWithClass("p", "comment__content");
-	commentElem.textContent = comment.content;
+	commentElem.textContent = comment.comment;
 
 	const textWrapper = elementWithClass("div", "comment__text-wrapper");
 	textWrapper.append(nameElem, dateElem, commentElem);
@@ -83,11 +89,11 @@ function displayComment(comment) {
 
 // returns new array of comments sorted by date in reverse chrono order
 function dateSortComments(comments) {
-	return comments.slice().sort((a, b) => b.datePosted - a.datePosted);
+	return comments.slice().sort((a, b) => b.timestamp - a.timestamp);
 }
 
 // render comments on load
 // IIFE
 (function init() {
-	render(dateSortComments(COMMENTS_DATA), displayComment); // see util.js
+	populateData("comments", COMMENTS_DATA, displayComment);
 })();
