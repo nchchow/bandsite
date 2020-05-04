@@ -60,13 +60,13 @@
 		&--name {
 			margin: 0;
 			font-family: $font-demi;
-			font-size: inherit;
+			@include text-size-height(inherit, 1.5rem);
 		}
 
 		&--address {
 			margin: 0;
 			font-family: $font-light;
-			font-size: inherit;
+			@include text-size-height(inherit, 1.5rem);
 
 			&:first-of-type {
 				margin-top: 24px;
@@ -75,6 +75,7 @@
 
 		&--email {
 			font-family: $font-light;
+			@include text-size-height(inherit, 1.5rem);
 			text-transform: lowercase;
 			margin: 24px 0 0 0;
 

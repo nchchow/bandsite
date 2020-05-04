@@ -674,12 +674,14 @@ body {
   margin: 0;
   font-family: "Avenir Next Demi Bold";
   font-size: inherit;
+  line-height: 1.5rem;
 }
 
 .main-footer__contact--address {
   margin: 0;
   font-family: "Avenir Next Ultra Light";
   font-size: inherit;
+  line-height: 1.5rem;
 }
 
 .main-footer__contact--address:first-of-type {
@@ -688,6 +690,8 @@ body {
 
 .main-footer__contact--email {
   font-family: "Avenir Next Ultra Light";
+  font-size: inherit;
+  line-height: 1.5rem;
   text-transform: lowercase;
   margin: 24px 0 0 0;
 }
