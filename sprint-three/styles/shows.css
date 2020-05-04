@@ -463,8 +463,8 @@ body {
   .shows__list .show {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 224px 148px 124px auto;
-        grid-template-columns: 224px 148px 124px auto;
+    -ms-grid-columns: 140px 204px 232px auto;
+        grid-template-columns: 140px 204px 232px auto;
     -ms-grid-rows: 64px;
         grid-template-rows: 64px;
     -webkit-box-align: center;
@@ -484,8 +484,8 @@ body {
 
 @media screen and (min-width: 1080px) {
   .shows__list .show {
-    -ms-grid-columns: 276px 184px 184px 160px;
-        grid-template-columns: 276px 184px 184px 160px;
+    -ms-grid-columns: 126px 284px 234px 160px;
+        grid-template-columns: 126px 284px 234px 160px;
   }
 }
 

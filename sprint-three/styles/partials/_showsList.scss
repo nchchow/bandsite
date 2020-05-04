@@ -28,7 +28,7 @@
 			flex-direction: column;
 			@include tablet() {
 				display: grid;
-				grid-template-columns: 224px 148px 124px auto;
+				grid-template-columns: 140px 204px 232px auto;
 				grid-template-rows: 64px;
 				align-items: center;
 				// hide table headers in greater than mobile sizes
@@ -51,7 +51,7 @@
 				}
 			}
 			@include desktop() {
-				grid-template-columns: 276px 184px 184px 160px;
+				grid-template-columns: 126px 284px 234px 160px;
 			}
 
 			&__date {
