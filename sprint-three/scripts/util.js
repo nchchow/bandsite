@@ -1,8 +1,3 @@
-// takes an array and a callback function that builds HTML elements on the screen
-// function render(arr, display) {
-// 	arr.forEach((data) => display(data));
-// }
-
 // helper function to create element and add class(es), returns the element
 function elementWithClass(elementStr, ...classStrs) {
 	const elem = document.createElement(elementStr);
@@ -29,30 +24,6 @@ function getShortDate(timeStamp) {
 	return `${m}/${d}/${y}`;
 }
 
-// get date string in eee mmm dd yyyy
-// function getLongDate(date) {
-// 	const months = [
-// 		"Jan",
-// 		"Feb",
-// 		"Mar",
-// 		"Apr",
-// 		"May",
-// 		"Jun",
-// 		"Jul",
-// 		"Aug",
-// 		"Sep",
-// 		"Oct",
-// 		"Nov",
-// 		"Dec",
-// 	];
-// 	const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-// 	const e = daysOfWeek[date.getDay()];
-// 	const m = months[date.getMonth()];
-// 	const d = padZero(date.getDate());
-// 	const y = date.getFullYear();
-// 	return `${e} ${m} ${d} ${y}`;
-// }
-
 // take date difference and unit, then format to string
 function formatDateDiff(diff, unit) {
 	if (diff !== 1) unit += "s"; // plural
@@ -77,3 +48,21 @@ function dateDifference(dt1, dt2) {
 	const y = month / 12;
 	return formatDateDiff(Math.floor(y), "year");
 }
+
+// returns a handler that toggles comment's date format
+const toggleDate = (comment) => {
+	let toggled = false; // private value
+	return function () {
+		if (toggled) {
+			// display time passed since posted date
+			this.textContent = dateDifference(
+				new Date().getTime(),
+				comment.timestamp
+			);
+		} else {
+			// display posted date
+			this.textContent = getShortDate(comment.timestamp);
+		}
+		toggled = !toggled;
+	};
+};

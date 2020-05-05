@@ -15,38 +15,18 @@ newCommentForm.addEventListener("submit", formHandler);
 function formHandler(e) {
 	// prevent page refresh
 	e.preventDefault();
-	// construct a new comment and push to comments array
+	// construct a new comment and POST to backend
 	const name = e.target.name.value;
 	const content = e.target.content.value;
 	if (name !== "" && content !== "") {
-		const newComment = {
+		post({
 			name: name,
 			comment: content,
-		};
-		// post comment to api
-		post(newComment);
+		});
 	} else {
 		alert("Please add name and/or comment");
 	}
 }
-
-// returns a handler that toggles comment's date format
-const toggleDate = (comment) => {
-	let toggled = false; // private value
-	return function () {
-		if (toggled) {
-			// display time passed since posted date
-			this.textContent = dateDifference(
-				new Date().getTime(),
-				comment.timestamp
-			);
-		} else {
-			// display posted date
-			this.textContent = getShortDate(comment.timestamp);
-		}
-		toggled = !toggled;
-	};
-};
 
 /* 
 COMMENT CONSTRUCTOR FUNCTIONS 
