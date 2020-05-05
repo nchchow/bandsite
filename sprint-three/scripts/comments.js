@@ -8,22 +8,23 @@ const newCommentForm = document.querySelector(".new-comment__form");
 // event listeners
 newCommentForm.addEventListener("submit", formHandler);
 
-// handlers
+/*
+	HANDLERS
+*/
+// handles form submission
 function formHandler(e) {
 	// prevent page refresh
 	e.preventDefault();
 	// construct a new comment and push to comments array
 	const name = e.target.name.value;
-	const comment = e.target.content.value;
-	if (name !== "" && comment !== "") {
-		COMMENTS_DATA.push({
+	const content = e.target.content.value;
+	if (name !== "" && content !== "") {
+		const newComment = {
 			name: name,
-			timestamp: new Date().getTime(),
-			comment: comment,
-		});
-		commentsList.innerHTML = ""; // clear all comments on screen
-		render(dateSortComments(COMMENTS_DATA), displayComment); // render comments
-		e.target.reset(); // clear input fields
+			comment: content,
+		};
+		// post comment to api
+		post(newComment);
 	} else {
 		alert("Please add name and/or comment");
 	}
@@ -95,5 +96,5 @@ function dateSortComments(comments) {
 // render comments on load
 // IIFE
 (function init() {
-	populateData("comments", COMMENTS_DATA, displayComment);
+	populateData("comments", displayComment, dateSortComments);
 })();

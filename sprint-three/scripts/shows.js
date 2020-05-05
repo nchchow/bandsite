@@ -21,5 +21,5 @@ function displayShow(show) {
 }
 
 (function init() {
-	populateData("showdates", SHOWS_DATA, displayShow);
+	populateData("showdates", displayShow);
 })();

@@ -1,26 +1,7 @@
-// takes a path string, an array, and a callback fn
-// gets data from api call, pushes into array and populates on screen using callback fn
-function populateData(path, arr, display) {
-	const URL = "https://project-1-api.herokuapp.com";
-	const API_KEY = "NoorJim&Andrii4prez";
-
-	const promise = axios.get(`${URL}/${path}?api_key=${API_KEY}`);
-	promise
-		.then((res) => {
-			res.data.forEach((comment) => {
-				arr.push(comment);
-				display(comment);
-			});
-		})
-		.catch((err) => {
-			console.log(err);
-		});
-}
-
 // takes an array and a callback function that builds HTML elements on the screen
-function render(arr, display) {
-	arr.forEach((data) => display(data));
-}
+// function render(arr, display) {
+// 	arr.forEach((data) => display(data));
+// }
 
 // helper function to create element and add class(es), returns the element
 function elementWithClass(elementStr, ...classStrs) {
@@ -49,28 +30,28 @@ function getShortDate(timeStamp) {
 }
 
 // get date string in eee mmm dd yyyy
-function getLongDate(date) {
-	const months = [
-		"Jan",
-		"Feb",
-		"Mar",
-		"Apr",
-		"May",
-		"Jun",
-		"Jul",
-		"Aug",
-		"Sep",
-		"Oct",
-		"Nov",
-		"Dec",
-	];
-	const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-	const e = daysOfWeek[date.getDay()];
-	const m = months[date.getMonth()];
-	const d = padZero(date.getDate());
-	const y = date.getFullYear();
-	return `${e} ${m} ${d} ${y}`;
-}
+// function getLongDate(date) {
+// 	const months = [
+// 		"Jan",
+// 		"Feb",
+// 		"Mar",
+// 		"Apr",
+// 		"May",
+// 		"Jun",
+// 		"Jul",
+// 		"Aug",
+// 		"Sep",
+// 		"Oct",
+// 		"Nov",
+// 		"Dec",
+// 	];
+// 	const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+// 	const e = daysOfWeek[date.getDay()];
+// 	const m = months[date.getMonth()];
+// 	const d = padZero(date.getDate());
+// 	const y = date.getFullYear();
+// 	return `${e} ${m} ${d} ${y}`;
+// }
 
 // take date difference and unit, then format to string
 function formatDateDiff(diff, unit) {
