@@ -1,10 +1,10 @@
-// takes a query string, an array, and a callback fn
+// takes a path string, an array, and a callback fn
 // gets data from api call, pushes into array and populates on screen using callback fn
-function populateData(query, arr, display) {
-	const URL = "https://project-1-api.herokuapp.com/";
-	const API_KEY = "?api_key=NoorJim&Andrii4prez";
+function populateData(path, arr, display) {
+	const URL = "https://project-1-api.herokuapp.com";
+	const API_KEY = "NoorJim&Andrii4prez";
 
-	const promise = axios.get(URL + query + API_KEY);
+	const promise = axios.get(`${URL}/${path}?api_key=${API_KEY}`);
 	promise
 		.then((res) => {
 			res.data.forEach((comment) => {
