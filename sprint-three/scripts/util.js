@@ -1,3 +1,8 @@
+// takes an array and a callback function that builds HTML elements on the screen
+function render(arr, display) {
+	arr.forEach((data) => display(data));
+}
+
 // helper function to create element and add class(es), returns the element
 function elementWithClass(elementStr, ...classStrs) {
 	const elem = document.createElement(elementStr);

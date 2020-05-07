@@ -2,24 +2,24 @@
 	TAKES COMMENTS, BUILDS HTML ELEMENTS AND RENDERS ON SCREEN
 */
 // DOM elements
-const commentsList = document.querySelector(".comments__list");
-const newCommentForm = document.querySelector(".new-comment__form");
+const commentsListElem = document.querySelector(".comments__list");
+const newCommentFormElem = document.querySelector(".new-comment__form");
 
 // event listeners
-newCommentForm.addEventListener("submit", formHandler);
+newCommentFormElem.addEventListener("submit", formHandler);
 
 /*
 	HANDLERS
 */
 // handles form submission
-function formHandler(e) {
+function formHandler(event) {
 	// prevent page refresh
-	e.preventDefault();
+	event.preventDefault();
 	// construct a new comment and POST to backend
-	const name = e.target.name.value;
-	const content = e.target.content.value;
+	const name = event.target.name.value;
+	const content = event.target.content.value;
 	if (name !== "" && content !== "") {
-		post({
+		postComment(event, {
 			name: name,
 			comment: content,
 		});
@@ -64,8 +64,13 @@ function displayComment(comment) {
 	const commentElem = elementWithClass("article", "comment");
 	commentElem.append(userIcon, textWrapper(comment));
 
+	const deleteButton = elementWithClass("button", "comment__delete-button");
+	deleteButton.addEventListener("click", () => {
+		deleteComment(comment);
+	});
+
 	const dividerElem = elementWithClass("hr", "comments__divider");
-	commentsList.append(commentElem, dividerElem);
+	commentsListElem.append(commentElem, deleteButton, dividerElem);
 }
 
 // returns new array of comments sorted by date in reverse chrono order
@@ -76,5 +81,5 @@ function dateSortComments(comments) {
 // render comments on load
 // IIFE
 (function init() {
-	populateData("comments", displayComment, dateSortComments);
+	populateData("comments", commentsListElem, displayComment, dateSortComments);
 })();
