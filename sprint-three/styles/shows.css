@@ -562,12 +562,14 @@ body {
 }
 
 .shows__list .show__buy-button {
-  margin: 32px 0 16px;
+  margin: 32px auto 16px;
+  max-width: 320px;
 }
 
 @media screen and (min-width: 720px) {
   .shows__list .show__buy-button {
     margin: 0;
+    max-width: 160px;
     justify-self: flex-end;
   }
 }
