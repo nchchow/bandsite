@@ -58,16 +58,20 @@ function textWrapper(comment) {
 function displayComment(comment) {
 	const userIcon = elementWithClass("div", "comment__user-icon");
 
-	const commentElem = elementWithClass("article", "comment");
-	commentElem.append(userIcon, textWrapper(comment));
-
 	const deleteButton = elementWithClass("button", "comment__delete-button");
+	deleteButton.textContent = "x";
 	deleteButton.addEventListener("click", () => {
 		deleteComment(comment);
 	});
 
+	const shiftWrapper = elementWithClass("div", "comment__shift-wrapper");
+	shiftWrapper.append(userIcon, textWrapper(comment));
+
+	const commentElem = elementWithClass("article", "comment");
+	commentElem.append(shiftWrapper, deleteButton);
+
 	const dividerElem = elementWithClass("hr", "comments__divider");
-	commentsListElem.append(commentElem, deleteButton, dividerElem);
+	commentsListElem.append(commentElem, dividerElem);
 }
 
 // returns new array of comments sorted by date in reverse chrono order

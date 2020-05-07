@@ -672,10 +672,24 @@ body {
 }
 
 .comments__list .comment {
+  position: relative;
+}
+
+.comments__list .comment:hover .comment__shift-wrapper {
+  -webkit-transform: translateX(-60px);
+          transform: translateX(-60px);
+}
+
+.comments__list .comment:hover .comment__delete-button {
+  z-index: 1;
+}
+
+.comments__list .comment__shift-wrapper {
+  padding: 24px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 24px 0;
+  background: #fff;
 }
 
 .comments__list .comment__user-icon {
@@ -718,6 +732,22 @@ body {
   margin: 16px 0 0;
   font-size: 0.9rem;
   line-height: 1.4rem;
+}
+
+.comments__list .comment__delete-button {
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 40px;
+  background: #d9534f;
+  color: #fff;
+  z-index: -1;
+}
+
+.comments__list .comment__delete-button:focus {
+  outline: none;
 }
 
 .site-featured {

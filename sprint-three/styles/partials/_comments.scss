@@ -84,8 +84,23 @@
 	// comment list
 	&__list {
 		.comment {
-			display: flex;
-			padding: 24px 0;
+			position: relative;
+
+			&:hover {
+				.comment__shift-wrapper {
+					transform: translateX(-60px);
+				}
+
+				.comment__delete-button {
+					z-index: 1;
+				}
+			}
+
+			&__shift-wrapper {
+				padding: 24px 0;
+				display: flex;
+				background: #fff;
+			}
 
 			&__user-icon {
 				margin: 0 16px 0 0;
@@ -120,6 +135,22 @@
 			&__content {
 				margin: 16px 0 0;
 				@include text-size-height(0.9rem, 1.4rem);
+			}
+
+			&__delete-button {
+				border: 0;
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 100%;
+				width: 40px;
+				background: $danger-CTA;
+				color: #fff;
+				z-index: -1;
+
+				&:focus {
+					outline: none;
+				}
 			}
 		}
 	}

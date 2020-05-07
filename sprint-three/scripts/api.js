@@ -1,6 +1,6 @@
 const proxy = "https://cors-anywhere.herokuapp.com";
 const URL = "https://project-1-api.herokuapp.com";
-const API_KEY = "94cda3cb-e7ae-42d7-ac0b-9823cc719913";
+const API_KEY = "4b308f9e-10f3-48c5-86e2-2eefbd6938f3";
 
 // takes a path string, a dom list to clear, a callback fn to render elements on screen, and an optional sort fn
 // gets data from api call, clear appropriate dom list and populates on screen using callback fn
