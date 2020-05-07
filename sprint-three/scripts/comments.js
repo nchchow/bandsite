@@ -43,10 +43,7 @@ function textWrapper(comment) {
 	dateElem.addEventListener("click", toggleHandler);
 
 	// display time passed since posted date
-	dateElem.textContent = dateDifference(
-		new Date().getTime(),
-		comment.timestamp
-	);
+	updateTime(dateElem, comment);
 
 	const commentElem = elementWithClass("p", "comment__content");
 	commentElem.textContent = comment.comment;

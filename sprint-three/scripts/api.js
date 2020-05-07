@@ -2,13 +2,13 @@ const proxy = "https://cors-anywhere.herokuapp.com";
 const URL = "https://project-1-api.herokuapp.com";
 const API_KEY = "94cda3cb-e7ae-42d7-ac0b-9823cc719913";
 
-// takes a path string, a dom element to clear, a callback fn to render elements on screen, and an optional sort fn
-// gets data from api call, pushes into array and populates on screen using callback fn
+// takes a path string, a dom list to clear, a callback fn to render elements on screen, and an optional sort fn
+// gets data from api call, clear appropriate dom list and populates on screen using callback fn
 function populateData(path, listToClear, display, sort) {
 	axios
 		.get(`${URL}/${path}?api_key=${API_KEY}`) // get promise from api
 		.then((res) => {
-			listToClear.innerHTML = ""; // clear all comments on screen
+			listToClear.innerHTML = ""; // clear list on screen
 			let arr = [];
 			res.data.forEach((datum) => {
 				arr.push(datum);
@@ -21,7 +21,7 @@ function populateData(path, listToClear, display, sort) {
 		});
 }
 
-// posts a new comment to api, then reloads comment section
+// posts a new comment to api, then repopulates comments list
 function postComment(event, newComment) {
 	event.target.reset(); // clear input fields
 	axios({
@@ -45,8 +45,8 @@ function postComment(event, newComment) {
 		});
 }
 
+// delete comment from api and repopulate comments list
 function deleteComment(comment) {
-	// delete from server
 	axios
 		.delete(`${URL}/comments/${comment.id}?api_key=${API_KEY}`)
 		.then(() => {
