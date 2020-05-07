@@ -741,13 +741,23 @@ body {
   right: 0;
   height: 100%;
   width: 40px;
-  background: #d9534f;
+  background: #f44336;
   color: #fff;
   z-index: -1;
 }
 
+@media screen and (min-width: 720px) {
+  .comments__list .comment__delete-button {
+    width: 50px;
+  }
+}
+
 .comments__list .comment__delete-button:focus {
   outline: none;
+}
+
+.comments__list .comment__delete-button:hover {
+  background: #e53935;
 }
 
 .site-featured {

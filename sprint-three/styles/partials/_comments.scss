@@ -148,8 +148,16 @@
 				color: #fff;
 				z-index: -1;
 
+				@include tablet() {
+					width: 50px;
+				}
+
 				&:focus {
 					outline: none;
+				}
+
+				&:hover {
+					background: $danger-hover;
 				}
 			}
 		}
