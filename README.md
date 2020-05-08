@@ -1,10 +1,11 @@
-# Bandsite
+# BandSite
 
 Website for an up-and-coming band that fetches comments and shows data from an API.
 
 ## Built With
 
 - [Axios](https://github.com/axios/axios) - HTTP client used to make API calls.
+- [The Band Site API](https://project-1-api.herokuapp.com) - Backend for comments and shows data
 - [Love](https://www.wikihow.com/Love-Programming) -
   An intense feeling of deep affection.
 
