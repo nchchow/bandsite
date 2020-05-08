@@ -1,3 +1,31 @@
+@-webkit-keyframes expand {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 40px;
+    opacity: 1;
+    @media screen and (min-width: 720px) {
+      width: 50px;
+    }
+  }
+}
+
+@keyframes expand {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 40px;
+    opacity: 1;
+    @media screen and (min-width: 720px) {
+      width: 50px;
+    }
+  }
+}
+
 @font-face {
   font-family: "Avenir Next Ultra Light";
   src: url("../assets/fonts/Linotype - AvenirNextLTPro-Ultlt.otf") format("opentype");
@@ -556,8 +584,8 @@ body {
 }
 
 .gallery__img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
   -webkit-filter: none;
           filter: none;
 }
@@ -681,7 +709,8 @@ body {
 }
 
 .comments__list .comment:hover .comment__delete-button {
-  z-index: 1;
+  -webkit-animation: expand forwards 0.3s;
+          animation: expand forwards 0.3s;
 }
 
 .comments__list .comment__shift-wrapper {
@@ -690,6 +719,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   background: #fff;
+  -webkit-transition: -webkit-transform cubic-bezier(0.5, 0.5, 0, 1) 0.3s;
+  transition: -webkit-transform cubic-bezier(0.5, 0.5, 0, 1) 0.3s;
+  transition: transform cubic-bezier(0.5, 0.5, 0, 1) 0.3s;
+  transition: transform cubic-bezier(0.5, 0.5, 0, 1) 0.3s, -webkit-transform cubic-bezier(0.5, 0.5, 0, 1) 0.3s;
 }
 
 .comments__list .comment__user-icon {
@@ -740,16 +773,11 @@ body {
   top: 0;
   right: 0;
   height: 100%;
-  width: 40px;
+  width: 0px;
+  opacity: 0;
+  overflow: hidden;
   background: #f44336;
   color: #fff;
-  z-index: -1;
-}
-
-@media screen and (min-width: 720px) {
-  .comments__list .comment__delete-button {
-    width: 50px;
-  }
 }
 
 .comments__list .comment__delete-button:focus {

@@ -71,7 +71,6 @@ const toggleDate = (comment) => {
 	return function () {
 		if (toggled) {
 			// display time passed since posted date
-
 			updateTime(this, comment);
 		} else {
 			// display posted date

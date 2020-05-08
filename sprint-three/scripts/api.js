@@ -13,7 +13,7 @@ function populateData(path, listToClear, display, sort) {
 			res.data.forEach((datum) => {
 				arr.push(datum);
 			});
-			if (sort) arr = sort(arr); // if a sort function is passed, sort arr before render
+			if (typeof sort === "function") arr = sort(arr); // if a sort function is passed, sort arr before render
 			render(arr, display);
 		})
 		.catch((err) => {

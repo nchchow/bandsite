@@ -60,6 +60,7 @@ function displayComment(comment) {
 
 	const deleteButton = elementWithClass("button", "comment__delete-button");
 	deleteButton.textContent = "x";
+	deleteButton.setAttribute("title", "Delete");
 	deleteButton.addEventListener("click", () => {
 		deleteComment(comment);
 	});
